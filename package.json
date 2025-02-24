@@ -1,0 +1,30 @@
+{
+	"name": "playwright-cucumber-typescript",
+	"version": "1.0.0",
+	"description": "UI Testing with Playwright + Cucumber + TypeScript",
+	"scripts": {
+		"test": "cucumber-js",
+		"test:headed": "cucumber-js --profile headed",
+		"pretest": "tsc --incremental -p tsconfig.json",
+		"test:api": "cucumber-js --profile api",
+		"test:all": "cucumber-js --profile all",
+		"test:api:smoke": "cucumber-js --profile api --tags @smoke",
+		"test:api:regression": "cucumber-js --profile api --tags @regression",
+		"test:api:crud": "cucumber-js --profile api --tags '@get or @post or @put'",
+		"test:api:not-smoke": "cucumber-js --profile api --tags 'not @smoke'"
+	},
+	"dependencies": {
+		"@cucumber/cucumber": "^10.0.1",
+		"@playwright/test": "^1.41.0",
+		"axios": "^1.7.9",
+		"chai": "^5.2.0",
+		"dotenv": "^16.3.1",
+		"typescript": "^5.3.0"
+	},
+	"devDependencies": {
+		"@types/chai": "^5.0.1",
+		"@types/cucumber": "^7.0.3",
+		"@types/node": "^22.13.4",
+		"ts-node": "^10.9.2"
+	}
+}
