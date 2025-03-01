@@ -1,0 +1,126 @@
+trigger:
+  - main
+  - develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  npm_config_cache: $(Pipeline.Workspace)/.npm
+
+stages:
+  - stage: Test
+    jobs:
+      - job: UITests
+        timeoutInMinutes: 60
+        strategy:
+          parallel: 3 # Run tests in parallel
+          matrix:
+            chrome:
+              browser: 'chromium'
+            firefox:
+              browser: 'firefox'
+            webkit:
+              browser: 'webkit'
+
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '18.x'
+            displayName: 'Install Node.js'
+
+          - task: Cache@2
+            inputs:
+              key: 'npm | "$(Agent.OS)" | package-lock.json'
+              restoreKeys: |
+                npm | "$(Agent.OS)"
+              path: $(npm_config_cache)
+            displayName: Cache npm
+
+          - script: |
+              npm ci
+            displayName: 'Install Dependencies'
+
+          - script: |
+              npx playwright install --with-deps $(browser)
+            displayName: 'Install Playwright Browsers'
+
+          - script: |
+              npm run test:headed
+            displayName: 'Run UI Tests'
+            env:
+              BASE_URL: $(BASE_URL)
+              USERNAME: $(USERNAME)
+              PASSWORD: $(PASSWORD)
+
+          - task: PublishTestResults@2
+            condition: succeededOrFailed()
+            inputs:
+              testRunner: JUnit
+              testResultsFiles: 'test-results/junit-results.xml'
+              mergeTestResults: true
+              testRunTitle: 'UI Tests - $(browser)'
+
+          - task: PublishPipelineArtifact@1
+            condition: failed()
+            inputs:
+              targetPath: 'test-results'
+              artifact: 'test-results-$(browser)'
+              publishLocation: 'pipeline'
+
+      - job: APITests
+        timeoutInMinutes: 30
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '18.x'
+            displayName: 'Install Node.js'
+
+          - script: |
+              npm ci
+            displayName: 'Install Dependencies'
+
+          - script: |
+              npm run test:api
+            displayName: 'Run API Tests'
+            env:
+              API_BASE_URL: $(API_BASE_URL)
+              API_TOKEN: $(API_TOKEN)
+
+          - task: PublishTestResults@2
+            condition: succeededOrFailed()
+            inputs:
+              testRunner: JUnit
+              testResultsFiles: 'test-results/junit-results.xml'
+              mergeTestResults: true
+              testRunTitle: 'API Tests'
+
+          - task: PublishPipelineArtifact@1
+            condition: failed()
+            inputs:
+              targetPath: 'test-results'
+              artifact: 'api-test-results'
+              publishLocation: 'pipeline'
+
+  - stage: Report
+    dependsOn: Test
+    condition: succeededOrFailed()
+    jobs:
+      - job: GenerateReport
+        steps:
+          - task: DownloadPipelineArtifact@2
+            inputs:
+              buildType: 'current'
+              artifactName: 'test-results-*'
+              targetPath: '$(Pipeline.Workspace)/test-results'
+
+          - script: |
+              npm install cucumber-html-reporter
+              node generate-report.js
+            displayName: 'Generate Cucumber HTML Report'
+
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: 'cucumber-report.html'
+              artifact: 'cucumber-html-report'
+              publishLocation: 'pipeline'
