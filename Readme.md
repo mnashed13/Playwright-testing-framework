@@ -1,3 +1,7 @@
+<div align="center">
+  <img width="170" src="https://playwright.dev/img/playwright-logo.svg" alt="Playwright Logo">
+</div>
+
 # Running and Using Playwright with Cucumber
 
 This guide explains how to run and use Playwright with Cucumber for automated testing of web applications.
