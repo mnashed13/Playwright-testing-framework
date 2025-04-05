@@ -8,7 +8,8 @@ export class BasePage {
 	}
 
 	async navigate(path: string = '') {
-		const baseUrl = process.env.BASE_URL?.trim() || 'https://www.google.com';
+		const baseUrl =
+			process.env.BASE_URL?.trim() || 'https://demo.applitools.com/';
 		// Ensure there's no double slash when concatenating
 		const cleanPath = path.startsWith('/') ? path : `/${path}`;
 		const url = baseUrl.endsWith('/')

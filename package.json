@@ -18,7 +18,7 @@
 		"@playwright/test": "^1.41.0",
 		"axios": "^1.7.9",
 		"chai": "^5.2.0",
-		"dotenv": "^16.3.1",
+		"dotenv": "^16.4.7",
 		"typescript": "^5.3.0"
 	},
 	"devDependencies": {
