@@ -27,7 +27,7 @@ jobs:
       - name: Run API tests
         run: npm run test:echo
         env:
-          API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          API_BASE_URL: 'https://postman-echo.com'
 
       - name: Upload test results
         if: always()
