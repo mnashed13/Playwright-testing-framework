@@ -1,16 +1,13 @@
 {
 	"compilerOptions": {
-		"target": "ES2022",
+		"target": "es2018",
 		"module": "commonjs",
-		"moduleResolution": "node",
+		"outDir": "./dist",
+		"rootDir": "./api-tests",
 		"strict": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true,
-		"outDir": "./dist",
-		"sourceMap": true,
-		"types": ["node", "@cucumber/cucumber", "@playwright/test"]
+		"forceConsistentCasingInFileNames": true
 	},
-	"include": ["src/**/*"],
-	"exclude": ["node_modules"]
+	"include": ["api-tests/**/*"]
 }

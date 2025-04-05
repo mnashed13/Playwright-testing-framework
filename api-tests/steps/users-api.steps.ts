@@ -1,6 +1,7 @@
-const { Given, When, Then } = require('@cucumber/cucumber');
-const { expect } = require('chai');
-const { APIClient } = require('../support/api-client');
+import { Given, When, Then } from '@cucumber/cucumber';
+import { expect } from 'chai';
+import { APIClient } from '../support/api-client';
+import { CustomWorld } from '../support/world';
 
 const apiClient = new APIClient();
 let response: any;
@@ -38,9 +39,15 @@ When('I send a PUT request to update user', async function () {
 	response = await apiClient.put(`/users/${userId}`, userPayload);
 });
 
-Then('the response status code should be {int}', function (statusCode: number) {
-	expect(response.status).to.equal(statusCode);
-});
+Then(
+	'the response status code should be {int}',
+	async function (this: CustomWorld, statusCode: number) {
+		console.log(this.response);
+		expect(this.response).to.not.be.null;
+		expect(this.response?.status).to.equal(statusCode);
+		// expect(this.response?.status).to.equal(404);
+	}
+);
 
 Then('the response should contain user information', function () {
 	expect(response.data).to.have.property('id');

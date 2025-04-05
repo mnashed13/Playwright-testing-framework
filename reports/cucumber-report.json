@@ -1,0 +1,398 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "postman-echo-api-testing;successfully-retrieve-data-from-echo-get-endpoint",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Successfully retrieve data from echo GET endpoint",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 668415
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I send a GET request to the echo endpoint",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3803545875
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the echo response status code should be 200",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 576042
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "the response should contain the request details",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1775499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 597833
+            },
+            "embeddings": [
+              {
+                "data": "Y3VybCAtLWxvY2F0aW9uICdodHRwczovL3Bvc3RtYW4tZWNoby5jb20vZ2V0JwogIC0taGVhZGVyICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKicKICAtLWhlYWRlciAnQ29udGVudC1UeXBlOiB1bmRlZmluZWQnCiAgLS1oZWFkZXIgJ1VzZXItQWdlbnQ6IGF4aW9zLzEuNy45JwogIC0taGVhZGVyICdBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGNvbXByZXNzLCBkZWZsYXRlLCBicic=",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@users",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "postman-echo-api-testing;successfully-send-data-to-echo-post-endpoint",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Successfully send data to echo POST endpoint",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 104959
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "I have valid POST request data",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 75209
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "I send a POST request to the echo endpoint",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:73"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 236625000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "the echo response status code should be 200",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 230499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "the POST response should contain the sent data",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:91"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 756875
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "the response should contain the request details",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 601916
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 108042
+            },
+            "embeddings": [
+              {
+                "data": "Y3VybCAtLWxvY2F0aW9uICdodHRwczovL3Bvc3RtYW4tZWNoby5jb20vcG9zdCcKICAtLWhlYWRlciAnQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyonCiAgLS1oZWFkZXIgJ0NvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbicKICAtLWhlYWRlciAnVXNlci1BZ2VudDogYXhpb3MvMS43LjknCiAgLS1oZWFkZXIgJ0NvbnRlbnQtTGVuZ3RoOiAxNycKICAtLWhlYWRlciAnQWNjZXB0LUVuY29kaW5nOiBnemlwLCBjb21wcmVzcywgZGVmbGF0ZSwgYnInCiAgLS1kYXRhICd7Im1ldGhvZCI6IlBPU1QifSc=",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@users",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "postman-echo-api-testing;send-post-request-with-invalid-content-type",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "Send POST request with invalid Content-Type",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 63250
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 17,
+            "name": "I have valid POST request data",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I set the Content-Type header to \"text/plain\"",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:64"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 74207
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I send a POST request to the echo endpoint",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:73"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 277488292
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "the echo response status code should be 200",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 212332
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the POST response should show different Content-Type",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:100"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 200208
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 148249
+            },
+            "embeddings": [
+              {
+                "data": "Y3VybCAtLWxvY2F0aW9uICdodHRwczovL3Bvc3RtYW4tZWNoby5jb20vcG9zdCcKICAtLWhlYWRlciAnQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyonCiAgLS1oZWFkZXIgJ0NvbnRlbnQtVHlwZTogdGV4dC9wbGFpbicKICAtLWhlYWRlciAnVXNlci1BZ2VudDogYXhpb3MvMS43LjknCiAgLS1oZWFkZXIgJ0NvbnRlbnQtTGVuZ3RoOiAxNycKICAtLWhlYWRlciAnQWNjZXB0LUVuY29kaW5nOiBnemlwLCBjb21wcmVzcywgZGVmbGF0ZSwgYnInCiAgLS1kYXRhICd7Im1ldGhvZCI6IlBPU1QifSc=",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@users",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "postman-echo-api-testing;send-post-request-with-empty-body",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "Send POST request with empty body",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 63374
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 24,
+            "name": "I have empty POST request data",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:60"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 30124
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 25,
+            "name": "I send a POST request to the echo endpoint",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:73"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 234526875
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "the echo response status code should be 200",
+            "match": {
+              "location": "api-tests/steps/echo-api.steps.ts:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 115833
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 107042
+            },
+            "embeddings": [
+              {
+                "data": "Y3VybCAtLWxvY2F0aW9uICdodHRwczovL3Bvc3RtYW4tZWNoby5jb20vcG9zdCcKICAtLWhlYWRlciAnQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyonCiAgLS1oZWFkZXIgJ0NvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbicKICAtLWhlYWRlciAnVXNlci1BZ2VudDogYXhpb3MvMS43LjknCiAgLS1oZWFkZXIgJ0NvbnRlbnQtTGVuZ3RoOiAyJwogIC0taGVhZGVyICdBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGNvbXByZXNzLCBkZWZsYXRlLCBicicKICAtLWRhdGEgJ3t9Jw==",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@users",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "postman-echo-api-testing",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Postman Echo API Testing",
+    "tags": [
+      {
+        "name": "@api",
+        "line": 1
+      },
+      {
+        "name": "@users",
+        "line": 1
+      }
+    ],
+    "uri": "api-tests/features/echo-api.feature"
+  }
+]
