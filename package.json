@@ -15,18 +15,18 @@
 		"test:echo": "cucumber-js api-tests/features/echo-api.feature --format json:reports/cucumber-report.json --format html:reports/cucumber-report.html"
 	},
 	"dependencies": {
-		"@cucumber/cucumber": "^10.0.1",
+		"@cucumber/cucumber": "10.3.1",
 		"@playwright/test": "^1.41.0",
-		"axios": "^1.6.0",
-		"chai": "^4.3.6",
-		"dotenv": "^16.0.3"
+		"axios": "1.6.7",
+		"chai": "4.3.10",
+		"dotenv": "16.4.5"
 	},
 	"devDependencies": {
 		"@types/cucumber": "^7.0.0",
-		"@types/chai": "^4.3.3",
-		"@types/node": "^18.11.9",
+		"@types/chai": "4.3.11",
+		"@types/node": "18.19.17",
 		"cross-env": "^7.0.3",
-		"ts-node": "^10.9.1",
-		"typescript": "^5.0.0"
+		"ts-node": "10.9.2",
+		"typescript": "5.3.3"
 	}
 }
