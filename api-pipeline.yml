@@ -1,0 +1,69 @@
+trigger:
+  - main
+  - develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  npm_config_cache: $(Pipeline.Workspace)/.npm
+
+jobs:
+  - job: APITests
+    timeoutInMinutes: 30
+    strategy:
+      matrix:
+        smoke:
+          TEST_SUITE: 'smoke'
+          npm_command: 'test:api:smoke'
+        regression:
+          TEST_SUITE: 'regression'
+          npm_command: 'test:api:regression'
+
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '18.x'
+        displayName: 'Install Node.js'
+
+      - task: Cache@2
+        inputs:
+          key: 'npm | "$(Agent.OS)" | package-lock.json'
+          restoreKeys: |
+            npm | "$(Agent.OS)"
+          path: $(npm_config_cache)
+        displayName: Cache npm
+
+      - script: |
+          npm ci
+        displayName: 'Install Dependencies'
+
+      - script: |
+          npm run $(npm_command)
+        displayName: 'Run API Tests - $(TEST_SUITE)'
+        env:
+          API_BASE_URL: $(API_BASE_URL)
+          API_TOKEN: $(API_TOKEN)
+          TEST_ENV: $(TEST_ENV)
+
+      - task: PublishTestResults@2
+        condition: succeededOrFailed()
+        inputs:
+          testRunner: JUnit
+          testResultsFiles: 'test-results/junit-results.xml'
+          mergeTestResults: true
+          testRunTitle: 'API Tests - $(TEST_SUITE)'
+
+      - task: PublishPipelineArtifact@1
+        condition: failed()
+        inputs:
+          targetPath: 'test-results'
+          artifact: 'api-test-results-$(TEST_SUITE)'
+          publishLocation: 'pipeline'
+
+      - task: PublishPipelineArtifact@1
+        condition: succeededOrFailed()
+        inputs:
+          targetPath: 'test-results/cucumber-report.html'
+          artifact: 'api-test-report-$(TEST_SUITE)'
+          publishLocation: 'pipeline'
