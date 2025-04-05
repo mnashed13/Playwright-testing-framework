@@ -12,7 +12,7 @@
 		"test:api:regression": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags @regression",
 		"test:api:crud": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags '@get or @post or @put'",
 		"test:api:not-smoke": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags 'not @smoke'",
-		"test:echo": "cucumber-js api-tests/features/echo-api.feature && node dist/generate-report.js"
+		"test:echo": "cucumber-js api-tests/features/echo-api.feature --format json:reports/cucumber-report.json --format html:reports/cucumber-report.html"
 	},
 	"dependencies": {
 		"@cucumber/cucumber": "^10.0.1",
