@@ -1,7 +1,6 @@
-import { Given, When, Then } from '@cucumber/cucumber';
-import { expect } from 'chai';
-import { APIClient } from '../support/api-client';
-import { World } from '../support/world';
+const { Given, When, Then } = require('@cucumber/cucumber');
+const { expect } = require('chai');
+const { APIClient } = require('../support/api-client');
 
 const apiClient = new APIClient();
 let response: any;
