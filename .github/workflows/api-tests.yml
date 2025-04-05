@@ -1,71 +1,28 @@
 name: API Tests
 
-on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
-  # Optional: Allow manual trigger
-  workflow_dispatch:
+on: [push, pull_request]
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: '18'
-          cache: 'npm'
+          node-version: '14'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Run API tests
-        run: npm run test:echo
-        env:
-          API_BASE_URL: 'https://postman-echo.com'
+      - name: Run tests
+        run: npm test
 
       - name: Upload test results
-        if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: test-reports
-          path: |
-            reports/
-            cucumber-report.html
-          retention-days: 30
-
-      # Optional: Comment test results on PR
-      - name: Comment PR with Test Results
-        if: github.event_name == 'pull_request' && always()
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const fs = require('fs');
-            try {
-              const jsonReport = JSON.parse(fs.readFileSync('reports/cucumber-report.json', 'utf8'));
-              const totalScenarios = jsonReport[0].elements.length;
-              const passedScenarios = jsonReport[0].elements.filter(e => 
-                e.steps.every(s => s.result.status === 'passed')
-              ).length;
-              
-              const comment = `## API Test Results
-              - Total Scenarios: ${totalScenarios}
-              - Passed Scenarios: ${passedScenarios}
-              - Failed Scenarios: ${totalScenarios - passedScenarios}
-              
-              [Detailed Report](${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID})`;
-              
-              github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: comment
-              });
-            } catch (error) {
-              console.log('Error creating PR comment:', error);
-            }
+          name: test-results
+          path: test-results
