@@ -7,7 +7,9 @@
 		"strict": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
+		"types": ["node", "@cucumber/cucumber", "chai"]
 	},
-	"include": ["api-tests/**/*"]
+	"include": ["api-tests/**/*"],
+	"exclude": ["node_modules"]
 }
