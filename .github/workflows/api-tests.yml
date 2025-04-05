@@ -31,7 +31,7 @@ jobs:
         run: mkdir -p reports
 
       - name: Run API tests
-        run: npm run test:ci
+        run: npm run test:echo
         env:
           API_BASE_URL: 'https://postman-echo.com'
 
