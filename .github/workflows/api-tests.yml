@@ -1,28 +1,45 @@
 name: API Tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '18'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Run tests
-        run: npm test
+      - name: Create reports directory
+        run: mkdir -p reports
+
+      - name: Run API tests
+        run: npm run test:ci
+        env:
+          API_BASE_URL: 'https://postman-echo.com'
 
       - name: Upload test results
-        uses: actions/upload-artifact@v3
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          name: test-results
-          path: 'reports'
+          name: test-reports
+          path: reports/
+          retention-days: 30
+          if-no-files-found: warn
