@@ -35,6 +35,7 @@ When(
 Then(
 	'the echo response status code should be {int}',
 	async function (this: CustomWorld, statusCode: number) {
+		console.log(this.response);
 		expect(this.response).to.not.be.null;
 		expect(this.response?.status).to.equal(statusCode);
 	}

@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 668415
+              "duration": 722416
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3803545875
+              "duration": 1151106999
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 576042
+              "duration": 4059082
             }
           },
           {
@@ -49,11 +49,11 @@
             "line": 7,
             "name": "the response should contain the request details",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:43"
+              "location": "api-tests/steps/echo-api.steps.ts:44"
             },
             "result": {
               "status": "passed",
-              "duration": 1775499
+              "duration": 631333
             }
           },
           {
@@ -61,7 +61,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 597833
+              "duration": 374041
             },
             "embeddings": [
               {
@@ -95,7 +95,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 104959
+              "duration": 92250
             }
           },
           {
@@ -104,11 +104,11 @@
             "line": 10,
             "name": "I have valid POST request data",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:54"
+              "location": "api-tests/steps/echo-api.steps.ts:55"
             },
             "result": {
               "status": "passed",
-              "duration": 75209
+              "duration": 50083
             }
           },
           {
@@ -117,11 +117,11 @@
             "line": 11,
             "name": "I send a POST request to the echo endpoint",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:73"
+              "location": "api-tests/steps/echo-api.steps.ts:74"
             },
             "result": {
               "status": "passed",
-              "duration": 236625000
+              "duration": 235707457
             }
           },
           {
@@ -134,7 +134,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 230499
+              "duration": 1448167
             }
           },
           {
@@ -143,11 +143,11 @@
             "line": 13,
             "name": "the POST response should contain the sent data",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:91"
+              "location": "api-tests/steps/echo-api.steps.ts:92"
             },
             "result": {
               "status": "passed",
-              "duration": 756875
+              "duration": 701584
             }
           },
           {
@@ -156,11 +156,11 @@
             "line": 14,
             "name": "the response should contain the request details",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:43"
+              "location": "api-tests/steps/echo-api.steps.ts:44"
             },
             "result": {
               "status": "passed",
-              "duration": 601916
+              "duration": 511124
             }
           },
           {
@@ -168,7 +168,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 108042
+              "duration": 106959
             },
             "embeddings": [
               {
@@ -202,7 +202,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 63250
+              "duration": 57749
             }
           },
           {
@@ -211,11 +211,11 @@
             "line": 17,
             "name": "I have valid POST request data",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:54"
+              "location": "api-tests/steps/echo-api.steps.ts:55"
             },
             "result": {
               "status": "passed",
-              "duration": 31500
+              "duration": 33207
             }
           },
           {
@@ -224,11 +224,11 @@
             "line": 18,
             "name": "I set the Content-Type header to \"text/plain\"",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:64"
+              "location": "api-tests/steps/echo-api.steps.ts:65"
             },
             "result": {
               "status": "passed",
-              "duration": 74207
+              "duration": 81583
             }
           },
           {
@@ -237,11 +237,11 @@
             "line": 19,
             "name": "I send a POST request to the echo endpoint",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:73"
+              "location": "api-tests/steps/echo-api.steps.ts:74"
             },
             "result": {
               "status": "passed",
-              "duration": 277488292
+              "duration": 276826375
             }
           },
           {
@@ -254,7 +254,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 212332
+              "duration": 2421124
             }
           },
           {
@@ -263,11 +263,11 @@
             "line": 21,
             "name": "the POST response should show different Content-Type",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:100"
+              "location": "api-tests/steps/echo-api.steps.ts:101"
             },
             "result": {
               "status": "passed",
-              "duration": 200208
+              "duration": 317833
             }
           },
           {
@@ -275,7 +275,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 148249
+              "duration": 213708
             },
             "embeddings": [
               {
@@ -309,7 +309,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 63374
+              "duration": 115083
             }
           },
           {
@@ -318,11 +318,11 @@
             "line": 24,
             "name": "I have empty POST request data",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:60"
+              "location": "api-tests/steps/echo-api.steps.ts:61"
             },
             "result": {
               "status": "passed",
-              "duration": 30124
+              "duration": 100249
             }
           },
           {
@@ -331,11 +331,11 @@
             "line": 25,
             "name": "I send a POST request to the echo endpoint",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:73"
+              "location": "api-tests/steps/echo-api.steps.ts:74"
             },
             "result": {
               "status": "passed",
-              "duration": 234526875
+              "duration": 230597874
             }
           },
           {
@@ -348,7 +348,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 115833
+              "duration": 1125791
             }
           },
           {
@@ -356,7 +356,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 107042
+              "duration": 97166
             },
             "embeddings": [
               {
