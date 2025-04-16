@@ -22,9 +22,10 @@
 		"dotenv": "16.4.5"
 	},
 	"devDependencies": {
-		"@types/cucumber": "^7.0.0",
 		"@types/chai": "4.3.11",
+		"@types/cucumber": "^7.0.0",
 		"@types/node": "18.19.17",
+		"buildkite-test-collector": "^1.8.1",
 		"cross-env": "^7.0.3",
 		"ts-node": "10.9.2",
 		"typescript": "5.3.3"
