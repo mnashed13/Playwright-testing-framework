@@ -6,7 +6,7 @@
 		"test": "cucumber-js",
 		"test:headed": "cucumber-js --profile headed",
 		"pretest": "tsc --incremental -p tsconfig.json",
-		"test:api": "cucumber-js --profile api",
+		"test:api": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api",
 		"test:all": "cucumber-js --profile all",
 		"test:api:smoke": "cucumber-js --profile api --tags @smoke",
 		"test:api:regression": "cucumber-js --profile api --tags @regression",
