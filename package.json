@@ -3,28 +3,30 @@
 	"version": "1.0.0",
 	"description": "UI Testing with Playwright + Cucumber + TypeScript",
 	"scripts": {
-		"test": "cucumber-js",
+		"test": "cucumber-js && node dist/generate-report.js",
 		"test:headed": "cucumber-js --profile headed",
-		"pretest": "tsc --incremental -p tsconfig.json",
-		"test:api": "cucumber-js --profile api",
-		"test:all": "cucumber-js --profile all",
-		"test:api:smoke": "cucumber-js --profile api --tags @smoke",
-		"test:api:regression": "cucumber-js --profile api --tags @regression",
-		"test:api:crud": "cucumber-js --profile api --tags '@get or @post or @put'",
-		"test:api:not-smoke": "cucumber-js --profile api --tags 'not @smoke'"
+		"pretest": "tsc",
+		"test:api": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api",
+		"test:all": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile all",
+		"test:api:smoke": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags @smoke",
+		"test:api:regression": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags @regression",
+		"test:api:crud": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags '@get or @post or @put'",
+		"test:api:not-smoke": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags 'not @smoke'",
+		"test:echo": "cucumber-js api-tests/features/echo-api.feature --format json:reports/cucumber-report.json --format html:reports/cucumber-report.html"
 	},
 	"dependencies": {
-		"@cucumber/cucumber": "^10.0.1",
+		"@cucumber/cucumber": "10.3.1",
 		"@playwright/test": "^1.41.0",
-		"axios": "^1.7.9",
-		"chai": "^5.2.0",
-		"dotenv": "^16.4.7",
-		"typescript": "^5.3.0"
+		"axios": "1.6.7",
+		"chai": "4.3.10",
+		"dotenv": "16.4.5"
 	},
 	"devDependencies": {
-		"@types/chai": "^5.0.1",
-		"@types/cucumber": "^7.0.3",
-		"@types/node": "^22.13.4",
-		"ts-node": "^10.9.2"
+		"@types/cucumber": "^7.0.0",
+		"@types/chai": "4.3.11",
+		"@types/node": "18.19.17",
+		"cross-env": "^7.0.3",
+		"ts-node": "10.9.2",
+		"typescript": "5.3.3"
 	}
 }
