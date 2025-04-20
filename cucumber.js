@@ -1,33 +1,18 @@
-const common = {
-	requireModule: ['ts-node/register'],
-	formatOptions: { snippetInterface: 'async-await' },
-};
+const { generateHtml } = require('@cucumber/html-formatter');
+const fs = require('fs');
 
 module.exports = {
 	default: {
-		...common,
-		require: ['src/steps/*.ts', 'src/support/*.ts'],
-		paths: ['src/features/*.feature'],
-	},
-	headed: {
-		...common,
-		require: ['src/steps/*.ts', 'src/support/*.ts'],
-		paths: ['src/features/*.feature'],
-		worldParameters: { headless: false },
-	},
-	api: {
-		...common,
-		require: ['api-tests/steps/*.ts', 'api-tests/support/*.ts'],
-		paths: ['api-tests/features/*.feature'],
-	},
-	all: {
-		...common,
-		require: [
-			'src/steps/*.ts',
-			'src/support/*.ts',
-			'api-tests/steps/*.ts',
-			'api-tests/support/*.ts',
+		paths: ['api-tests/features/**/*.feature'],
+		require: ['api-tests/steps/**/*.ts', 'api-tests/support/**/*.ts'],
+		requireModule: ['ts-node/register'],
+		format: [
+			'progress-bar',
+			'html:reports/cucumber-report.html',
+			'json:reports/cucumber-report.json',
 		],
-		paths: ['src/features/*.feature', 'api-tests/features/*.feature'],
+		formatOptions: {
+			snippetInterface: 'async-await',
+		},
 	},
 };
