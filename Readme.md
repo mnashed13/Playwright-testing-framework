@@ -148,3 +148,5 @@ graph TD
 - [Cucumber.js Documentation](https://cucumber.io/docs/cucumber/)
 
 By following these steps, you can successfully integrate Playwright with Cucumber for automated testing of web applications.
+
+[![Build status](https://badge.buildkite.com/MNDesigns1/playwright-test)](https://buildkite.com/[your-org]/[your-pipeline])
