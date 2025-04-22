@@ -81,6 +81,67 @@ To run the tests, execute the following command in your project directory:
 npx cucumber-js
 ```
 
+## Project Structure
+
+```mermaid
+graph TD
+    A[Project Root] --> B[src/]
+    A --> C[api-tests/]
+    A --> D[cucumber.cjs]
+    A --> E[package.json]
+
+    B --> F[features/*.feature]
+    B --> G[steps/*.ts]
+    B --> H[support/]
+    B --> I[pages/]
+
+    C --> J[features/*.feature]
+    C --> K[steps/*.ts]
+    C --> L[support/]
+
+    K --> K1[users-api.steps.ts]
+    K --> K2[echo-api.steps.ts]
+
+    L --> L1[api-client.ts]
+    L --> L2[world.ts]
+    L --> L3[curl-formatter.ts]
+
+    H --> H1[world.ts]
+    H --> H2[hooks.ts]
+```
+
+## Code Locations
+
+### Configuration
+
+- [package.json](./package.json) - Contains test scripts and dependencies
+- [cucumber.cjs](./cucumber.cjs) - Cucumber configuration with profiles
+
+### API Tests
+
+- [api-tests/features/](./api-tests/features/) - API test feature files
+- [api-tests/steps/echo-api.steps.ts](./api-tests/steps/echo-api.steps.ts) - Echo API test steps
+- [api-tests/steps/users-api.steps.ts](./api-tests/steps/users-api.steps.ts) - User API test steps
+- [api-tests/support/api-client.ts](./api-tests/support/api-client.ts) - API client for making requests
+- [api-tests/support/world.ts](./api-tests/support/world.ts) - Custom world for API tests
+- [api-tests/support/curl-formatter.ts](./api-tests/support/curl-formatter.ts) - Formats requests as curl commands
+
+### UI Tests
+
+- [src/features/](./src/features/) - UI test feature files
+- [src/steps/](./src/steps/) - UI test step definitions
+- [src/pages/](./src/pages/) - Page object models
+- [src/support/world.ts](./src/support/world.ts) - Custom world for UI tests
+- [src/support/hooks.ts](./src/support/hooks.ts) - Setup and teardown hooks
+
+## Running Tests
+
+- `npm test` - Run UI tests
+- `npm run test:api` - Run API tests
+- `npm run test:all` - Run all tests
+- `npm run test:api:smoke` - Run API smoke tests
+- `npm run test:echo` - Run Echo API tests specifically
+
 **Documentation Links**
 
 - [Playwright Documentation](https://playwright.dev/docs/intro)
