@@ -14,7 +14,15 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 718875
+              "duration": 659100
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 317100100
             }
           },
           {
@@ -23,11 +31,11 @@
             "line": 5,
             "name": "I send a GET request to the echo endpoint",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:23"
+              "location": "api-tests\\steps\\echo-api.steps.ts:23"
             },
             "result": {
               "status": "passed",
-              "duration": 1046405750
+              "duration": 1104612099
             }
           },
           {
@@ -36,11 +44,11 @@
             "line": 6,
             "name": "the echo response status code should be 200",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:35"
+              "location": "api-tests\\steps\\echo-api.steps.ts:35"
             },
             "result": {
               "status": "passed",
-              "duration": 3412792
+              "duration": 13849999
             }
           },
           {
@@ -49,11 +57,11 @@
             "line": 7,
             "name": "the response should contain the request details",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:44"
+              "location": "api-tests\\steps\\echo-api.steps.ts:44"
             },
             "result": {
               "status": "passed",
-              "duration": 611875
+              "duration": 1881800
             }
           },
           {
@@ -61,11 +69,19 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 269999
+              "duration": 120972999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 583399
             },
             "embeddings": [
               {
-                "data": "Y3VybCAtLWxvY2F0aW9uICdodHRwczovL3Bvc3RtYW4tZWNoby5jb20vZ2V0JwogIC0taGVhZGVyICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKicKICAtLWhlYWRlciAnQ29udGVudC1UeXBlOiB1bmRlZmluZWQnCiAgLS1oZWFkZXIgJ1VzZXItQWdlbnQ6IGF4aW9zLzEuNy45JwogIC0taGVhZGVyICdBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGNvbXByZXNzLCBkZWZsYXRlLCBicic=",
+                "data": "Y3VybCAtLWxvY2F0aW9uICdodHRwczovL3Bvc3RtYW4tZWNoby5jb20vZ2V0JwogIC0taGVhZGVyICdBY2NlcHQ6IGFwcGxpY2F0aW9uL2pzb24sIHRleHQvcGxhaW4sICovKicKICAtLWhlYWRlciAnQ29udGVudC1UeXBlOiB1bmRlZmluZWQnCiAgLS1oZWFkZXIgJ1VzZXItQWdlbnQ6IGF4aW9zLzEuNi43JwogIC0taGVhZGVyICdBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGNvbXByZXNzLCBkZWZsYXRlLCBicic=",
                 "mime_type": "text/plain"
               }
             ]
@@ -95,7 +111,15 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 79500
+              "duration": 621100
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 232194799
             }
           },
           {
@@ -104,11 +128,11 @@
             "line": 10,
             "name": "I have valid POST request data",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:55"
+              "location": "api-tests\\steps\\echo-api.steps.ts:55"
             },
             "result": {
               "status": "passed",
-              "duration": 68250
+              "duration": 160200
             }
           },
           {
@@ -117,11 +141,11 @@
             "line": 11,
             "name": "I send a POST request to the echo endpoint",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:74"
+              "location": "api-tests\\steps\\echo-api.steps.ts:74"
             },
             "result": {
               "status": "passed",
-              "duration": 2053238665
+              "duration": 281522000
             }
           },
           {
@@ -130,11 +154,11 @@
             "line": 12,
             "name": "the echo response status code should be 200",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:35"
+              "location": "api-tests\\steps\\echo-api.steps.ts:35"
             },
             "result": {
               "status": "passed",
-              "duration": 1336583
+              "duration": 12397600
             }
           },
           {
@@ -143,11 +167,11 @@
             "line": 13,
             "name": "the POST response should contain the sent data",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:92"
+              "location": "api-tests\\steps\\echo-api.steps.ts:92"
             },
             "result": {
               "status": "passed",
-              "duration": 637708
+              "duration": 813799
             }
           },
           {
@@ -156,11 +180,11 @@
             "line": 14,
             "name": "the response should contain the request details",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:44"
+              "location": "api-tests\\steps\\echo-api.steps.ts:44"
             },
             "result": {
               "status": "passed",
-              "duration": 527708
+              "duration": 1285100
             }
           },
           {
@@ -168,11 +192,19 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 108041
+              "duration": 139873700
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 314400
             },
             "embeddings": [
               {
-                "data": "Y3VybCAtLWxvY2F0aW9uICdodHRwczovL3Bvc3RtYW4tZWNoby5jb20vcG9zdCcKICAtLWhlYWRlciAnQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyonCiAgLS1oZWFkZXIgJ0NvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbicKICAtLWhlYWRlciAnVXNlci1BZ2VudDogYXhpb3MvMS43LjknCiAgLS1oZWFkZXIgJ0NvbnRlbnQtTGVuZ3RoOiAxNycKICAtLWhlYWRlciAnQWNjZXB0LUVuY29kaW5nOiBnemlwLCBjb21wcmVzcywgZGVmbGF0ZSwgYnInCiAgLS1kYXRhICd7Im1ldGhvZCI6IlBPU1QifSc=",
+                "data": "Y3VybCAtLWxvY2F0aW9uICdodHRwczovL3Bvc3RtYW4tZWNoby5jb20vcG9zdCcKICAtLWhlYWRlciAnQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyonCiAgLS1oZWFkZXIgJ0NvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbicKICAtLWhlYWRlciAnVXNlci1BZ2VudDogYXhpb3MvMS42LjcnCiAgLS1oZWFkZXIgJ0NvbnRlbnQtTGVuZ3RoOiAxNycKICAtLWhlYWRlciAnQWNjZXB0LUVuY29kaW5nOiBnemlwLCBjb21wcmVzcywgZGVmbGF0ZSwgYnInCiAgLS1kYXRhICd7Im1ldGhvZCI6IlBPU1QifSc=",
                 "mime_type": "text/plain"
               }
             ]
@@ -202,7 +234,15 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 56625
+              "duration": 907199
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 253512899
             }
           },
           {
@@ -211,11 +251,11 @@
             "line": 17,
             "name": "I have valid POST request data",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:55"
+              "location": "api-tests\\steps\\echo-api.steps.ts:55"
             },
             "result": {
               "status": "passed",
-              "duration": 30208
+              "duration": 135000
             }
           },
           {
@@ -224,11 +264,11 @@
             "line": 18,
             "name": "I set the Content-Type header to \"text/plain\"",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:65"
+              "location": "api-tests\\steps\\echo-api.steps.ts:65"
             },
             "result": {
               "status": "passed",
-              "duration": 86040
+              "duration": 234500
             }
           },
           {
@@ -237,11 +277,11 @@
             "line": 19,
             "name": "I send a POST request to the echo endpoint",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:74"
+              "location": "api-tests\\steps\\echo-api.steps.ts:74"
             },
             "result": {
               "status": "passed",
-              "duration": 235734500
+              "duration": 258553599
             }
           },
           {
@@ -250,11 +290,11 @@
             "line": 20,
             "name": "the echo response status code should be 200",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:35"
+              "location": "api-tests\\steps\\echo-api.steps.ts:35"
             },
             "result": {
               "status": "passed",
-              "duration": 1222708
+              "duration": 10021200
             }
           },
           {
@@ -263,11 +303,11 @@
             "line": 21,
             "name": "the POST response should show different Content-Type",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:101"
+              "location": "api-tests\\steps\\echo-api.steps.ts:101"
             },
             "result": {
               "status": "passed",
-              "duration": 211874
+              "duration": 293900
             }
           },
           {
@@ -275,11 +315,19 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 154959
+              "duration": 125906599
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 270600
             },
             "embeddings": [
               {
-                "data": "Y3VybCAtLWxvY2F0aW9uICdodHRwczovL3Bvc3RtYW4tZWNoby5jb20vcG9zdCcKICAtLWhlYWRlciAnQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyonCiAgLS1oZWFkZXIgJ0NvbnRlbnQtVHlwZTogdGV4dC9wbGFpbicKICAtLWhlYWRlciAnVXNlci1BZ2VudDogYXhpb3MvMS43LjknCiAgLS1oZWFkZXIgJ0NvbnRlbnQtTGVuZ3RoOiAxNycKICAtLWhlYWRlciAnQWNjZXB0LUVuY29kaW5nOiBnemlwLCBjb21wcmVzcywgZGVmbGF0ZSwgYnInCiAgLS1kYXRhICd7Im1ldGhvZCI6IlBPU1QifSc=",
+                "data": "Y3VybCAtLWxvY2F0aW9uICdodHRwczovL3Bvc3RtYW4tZWNoby5jb20vcG9zdCcKICAtLWhlYWRlciAnQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyonCiAgLS1oZWFkZXIgJ0NvbnRlbnQtVHlwZTogdGV4dC9wbGFpbicKICAtLWhlYWRlciAnVXNlci1BZ2VudDogYXhpb3MvMS42LjcnCiAgLS1oZWFkZXIgJ0NvbnRlbnQtTGVuZ3RoOiAxNycKICAtLWhlYWRlciAnQWNjZXB0LUVuY29kaW5nOiBnemlwLCBjb21wcmVzcywgZGVmbGF0ZSwgYnInCiAgLS1kYXRhICd7Im1ldGhvZCI6IlBPU1QifSc=",
                 "mime_type": "text/plain"
               }
             ]
@@ -309,7 +357,15 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 52125
+              "duration": 592399
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 250321799
             }
           },
           {
@@ -318,11 +374,11 @@
             "line": 24,
             "name": "I have empty POST request data",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:61"
+              "location": "api-tests\\steps\\echo-api.steps.ts:61"
             },
             "result": {
               "status": "passed",
-              "duration": 40874
+              "duration": 163399
             }
           },
           {
@@ -331,11 +387,11 @@
             "line": 25,
             "name": "I send a POST request to the echo endpoint",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:74"
+              "location": "api-tests\\steps\\echo-api.steps.ts:74"
             },
             "result": {
               "status": "passed",
-              "duration": 230754958
+              "duration": 260735700
             }
           },
           {
@@ -344,11 +400,11 @@
             "line": 26,
             "name": "the echo response status code should be 200",
             "match": {
-              "location": "api-tests/steps/echo-api.steps.ts:35"
+              "location": "api-tests\\steps\\echo-api.steps.ts:35"
             },
             "result": {
               "status": "passed",
-              "duration": 1213750
+              "duration": 14097700
             }
           },
           {
@@ -356,11 +412,19 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 150208
+              "duration": 140813999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 276300
             },
             "embeddings": [
               {
-                "data": "Y3VybCAtLWxvY2F0aW9uICdodHRwczovL3Bvc3RtYW4tZWNoby5jb20vcG9zdCcKICAtLWhlYWRlciAnQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyonCiAgLS1oZWFkZXIgJ0NvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbicKICAtLWhlYWRlciAnVXNlci1BZ2VudDogYXhpb3MvMS43LjknCiAgLS1oZWFkZXIgJ0NvbnRlbnQtTGVuZ3RoOiAyJwogIC0taGVhZGVyICdBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGNvbXByZXNzLCBkZWZsYXRlLCBicicKICAtLWRhdGEgJ3t9Jw==",
+                "data": "Y3VybCAtLWxvY2F0aW9uICdodHRwczovL3Bvc3RtYW4tZWNoby5jb20vcG9zdCcKICAtLWhlYWRlciAnQWNjZXB0OiBhcHBsaWNhdGlvbi9qc29uLCB0ZXh0L3BsYWluLCAqLyonCiAgLS1oZWFkZXIgJ0NvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbicKICAtLWhlYWRlciAnVXNlci1BZ2VudDogYXhpb3MvMS42LjcnCiAgLS1oZWFkZXIgJ0NvbnRlbnQtTGVuZ3RoOiAyJwogIC0taGVhZGVyICdBY2NlcHQtRW5jb2Rpbmc6IGd6aXAsIGNvbXByZXNzLCBkZWZsYXRlLCBicicKICAtLWRhdGEgJ3t9Jw==",
                 "mime_type": "text/plain"
               }
             ]
@@ -393,6 +457,181 @@
         "line": 1
       }
     ],
-    "uri": "api-tests/features/echo-api.feature"
+    "uri": "api-tests\\features\\echo-api.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "user-authentication;successful-login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Successful login with valid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 546599
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 230560800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I am on the login page",
+            "match": {
+              "location": "src\\steps\\login.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 762448600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I login with valid credentials",
+            "match": {
+              "location": "src\\steps\\login.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 750299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "I should be logged in successfully",
+            "match": {
+              "location": "src\\steps\\login.steps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 617300
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 121202099
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 179100
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-authentication;failed-login-with-invalid-credentials",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Failed login with invalid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 709699
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 244404900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "I am on the login page",
+            "match": {
+              "location": "src\\steps\\login.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 279912999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I login with invalid credentials",
+            "match": {
+              "location": "src\\steps\\login.steps.ts:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 256900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I should see an error message",
+            "match": {
+              "location": "src\\steps\\login.steps.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 134600
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 120303600
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 199099
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "user-authentication",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "User Authentication",
+    "tags": [],
+    "uri": "src\\features\\login.feature"
   }
 ]
