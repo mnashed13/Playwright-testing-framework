@@ -148,43 +148,100 @@ graph TD
 
 The project includes several VS Code launch configurations for running tests:
 
-1. **Run All UI Tests**
-   - Runs all UI tests in the `src/features` directory
+1. **Run All Cucumber Tests**
+   - Runs all UI tests in the `src/features` directory using Cucumber
    - Access via VS Code Debug panel (F5)
 
 2. **Run All API Tests**
-   - Runs all API tests in the `api-tests/features` directory
+   - Runs all API tests in the `api-tests/features` directory using Cucumber
    - Access via VS Code Debug panel (F5)
 
-3. **Run Specific Test File**
-   - Run a specific feature file by opening it and using the debug configuration
+3. **Run Specific Feature File**
+   - Run a specific feature file by opening it and using this debug configuration
    - Works for both UI and API tests
    - Access via VS Code Debug panel (F5)
 
 4. **Run Tests with Tags**
-   - Run tests filtered by tags (e.g., @smoke, @regression)
+   - Run tests filtered by Cucumber tags (e.g., @smoke, @regression)
    - Prompts for tag input when launched
    - Access via VS Code Debug panel (F5)
 
-5. **Debug UI Tests in Playwright**
+5. **Debug Tests in Playwright**
    - Runs UI tests with Playwright's debugger
    - Opens Playwright's debug window for step-by-step debugging
    - Access via VS Code Debug panel (F5)
 
-6. **Debug API Tests in Playwright**
-   - Runs API tests with Playwright's debugger
-   - Opens Playwright's debug window for step-by-step debugging
+6. **Run Tests in UI Mode**
+   - Runs UI tests with Playwright's UI mode
+   - Opens Playwright's UI Mode for interactive test running and debugging
    - Access via VS Code Debug panel (F5)
 
-7. **Debug Specific UI Test in Playwright**
-   - Debug a specific UI test file with Playwright's debugger
-   - Opens Playwright's debug window for step-by-step debugging
+7. **Run API Tests in UI Mode**
+   - Runs API tests with Playwright's UI mode
+   - Opens Playwright's UI Mode for API test exploration
    - Access via VS Code Debug panel (F5)
 
-8. **Debug Specific API Test in Playwright**
-   - Debug a specific API test file with Playwright's debugger
-   - Opens Playwright's debug window for step-by-step debugging
+8. **Run Tests in Headed Mode**
+   - Runs UI tests with browser visible
+   - Browser window will be shown during test execution
    - Access via VS Code Debug panel (F5)
+
+9. **Run Tests in WebKit/Firefox/Chromium**
+   - Runs tests in a specific browser (WebKit, Firefox, or Chromium)
+   - Uses Cucumber with Playwright world parameters
+   - Access via VS Code Debug panel (F5)
+
+10. **Run Tests in UI Mode with Debug**
+    - Combines UI mode with debug mode
+    - Provides both UI interface and debugging capabilities
+    - Access via VS Code Debug panel (F5)
+
+11. **Run API Tests in UI Mode with Debug**
+    - Runs API tests with both UI mode and debug mode
+    - Provides both UI interface and debugging for API tests
+    - Access via VS Code Debug panel (F5)
+
+12. **Run Tests in UI Mode with Headed**
+    - Runs tests with UI mode and visible browser
+    - Combines interactive UI with visible browser window
+    - Access via VS Code Debug panel (F5)
+
+13. **Run API Tests in UI Mode with Headed**
+    - Runs API tests with UI mode and visible browser
+    - Provides UI experience for API tests with visible browser
+    - Access via VS Code Debug panel (F5)
+
+14. **Run Tests in UI Mode with Specific Browser**
+    - Runs tests in UI mode with a selected browser
+    - Prompts for browser selection (Chromium, Firefox, WebKit)
+    - Access via VS Code Debug panel (F5)
+
+15. **Run API Tests in UI Mode with Specific Browser**
+    - Runs API tests in UI mode with a selected browser
+    - Prompts for browser selection (Chromium, Firefox, WebKit)
+    - Access via VS Code Debug panel (F5)
+
+### Playwright UI Mode
+
+Playwright UI Mode provides an interactive interface for running and debugging tests. Key features include:
+
+1. **Interactive Test Exploration**
+   - Browse and run tests from a graphical interface
+   - See test results visually
+
+2. **Time-travel Debugging**
+   - Step through test execution
+   - See each action and its result
+
+3. **Trace Viewer**
+   - View detailed traces of test execution
+   - Inspect network activity, console logs, and screenshots
+
+4. **Live Editing**
+   - Edit locators and see results in real-time
+   - Test selector effectiveness instantly
+
+To access UI Mode, use any of the UI Mode launch configurations.
 
 ### Using Playwright Debugger
 
