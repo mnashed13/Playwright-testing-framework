@@ -4,6 +4,8 @@
 
 # Running and Using Playwright with Cucumber Base Repo
 
+[![Echo API Tests](https://github.com/mnashed13/Playwright-testing-framework/actions/workflows/api-tests.yml/badge.svg)](https://github.com/mnashed13/Playwright-testing-framework/actions/workflows/api-tests.yml)
+
 This guide explains how to run and use Playwright with Cucumber for automated testing of web applications.
 
 **Prerequisites**
