@@ -65,3 +65,7 @@ jobs:
           targetPath: 'test-results'
           artifact: 'ui-test-results-$(browser)'
           publishLocation: 'pipeline'
+
+      - script: |
+          npx semantic-release --dry-run
+        displayName: 'Preview Semantic Version'
