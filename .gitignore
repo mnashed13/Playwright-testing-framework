@@ -16,6 +16,7 @@ cucumber-report.json
 /.env
 .env.local
 .env.*
+.env
 
 # IDE files
 .idea/
