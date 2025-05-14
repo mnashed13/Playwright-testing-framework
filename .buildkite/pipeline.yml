@@ -1,0 +1,13 @@
+steps:
+  - label: '🧪 Run API Tests'
+    commands:
+      - npm install
+      - npm run test:api
+    plugins:
+      - docker#v3.7.0:
+          image: 'node:18'
+          environment:
+            - API_BASE_URL=https://postman-echo.com/
+            - NODE_ENV=test
+    artifact_paths:
+      - 'test-results/**/*'

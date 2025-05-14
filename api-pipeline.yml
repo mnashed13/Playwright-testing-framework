@@ -67,3 +67,7 @@ jobs:
           targetPath: 'test-results/cucumber-report.html'
           artifact: 'api-test-report-$(TEST_SUITE)'
           publishLocation: 'pipeline'
+
+      - script: |
+          npx semantic-release --dry-run
+        displayName: 'Preview Semantic Version'
