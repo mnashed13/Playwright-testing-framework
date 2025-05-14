@@ -13,7 +13,8 @@ cucumber-report.html
 cucumber-report.json
 
 # Environment files
-.env
+/.env
+.env.local
 .env.*
 
 # IDE files
