@@ -12,7 +12,8 @@
 		"test:api:regression": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags @regression",
 		"test:api:crud": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags '@get or @post or @put'",
 		"test:api:not-smoke": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags 'not @smoke'",
-		"test:echo": "cucumber-js api-tests/features/echo-api.feature --format json:reports/cucumber-report.json --format html:reports/cucumber-report.html"
+		"test:echo": "cucumber-js api-tests/features/echo-api.feature --format json:reports/cucumber-report.json --format html:reports/cucumber-report.html",
+		"release": "semantic-release"
 	},
 	"dependencies": {
 		"@cucumber/cucumber": "10.3.1",
@@ -28,6 +29,8 @@
 		"buildkite-test-collector": "^1.8.1",
 		"cross-env": "^7.0.3",
 		"ts-node": "10.9.2",
-		"typescript": "5.3.3"
-	}
+		"typescript": "5.3.3",
+		"semantic-release": "^24.2.3"
+	},
+	"release": "semantic-release"
 }

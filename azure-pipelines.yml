@@ -124,3 +124,7 @@ stages:
               targetPath: 'cucumber-report.html'
               artifact: 'cucumber-html-report'
               publishLocation: 'pipeline'
+
+          - script: |
+              npx semantic-release --dry-run
+            displayName: 'Preview Semantic Version'
