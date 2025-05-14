@@ -86,6 +86,14 @@ npx cucumber-js
 - [Playwright Documentation](https://playwright.dev/docs/intro)
 - [Cucumber.js Documentation](https://cucumber.io/docs/cucumber/)
 
+**Additional Documentation**
+
+- [Playwright Test API Reference](https://playwright.dev/docs/api/class-test)
+- [Playwright Configuration Options](https://playwright.dev/docs/test-configuration)
+- [Cucumber Expressions](https://cucumber.io/docs/cucumber/cucumber-expressions/)
+- [Running Cucumber with TypeScript](https://github.com/cucumber/cucumber-js/blob/main/docs/nodejs_example.md)
+- [Playwright Test Generator](https://playwright.dev/docs/codegen)
+
 By following these steps, you can successfully integrate Playwright with Cucumber for automated testing of web applications.
 
 [![Build status](https://badge.buildkite.com/MNDesigns1/playwright-test)](https://buildkite.com/[your-org]/[your-pipeline])
