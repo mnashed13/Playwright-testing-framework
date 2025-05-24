@@ -325,3 +325,35 @@ By following these steps, you can successfully integrate Playwright with Cucumbe
 ## 📦 Releases & Changelog
 
 - [View Releases and Changelog](https://github.com/mnashed13/Playwright-testing-framework/releases)
+
+---
+
+## 🚀 Automated Releases & Test Reporting (CI/CD)
+
+This project uses **semantic versioning** and automated releases powered by [semantic-release](https://github.com/semantic-release/semantic-release) and GitHub Actions.
+
+### How it works
+
+- On every push to `main` or `master`, the following workflow runs:
+
+  1. **Install dependencies**
+  2. **Run all tests** (`npm test`)
+  3. **Upload test reports** as workflow artifacts:
+     - Playwright HTML report (`playwright-report/index.html`)
+     - Cucumber HTML report (`reports/cucumber-report.html`)
+  4. **Create a new semantic versioned release** (if all tests pass and there are relevant changes)
+
+- If any test fails, the release will not proceed.
+- You can download the test reports for each release from the GitHub Actions UI (see the 'Artifacts' section of the workflow run).
+
+### Example Workflow File
+
+See `.github/workflows/semantic-release.yml` for the full workflow definition.
+
+### Why this is useful
+
+- **Automated versioning**: No manual version bumps—release versions are determined from commit messages.
+- **Quality gate**: Releases only happen if all tests pass.
+- **Traceability**: Download and review Playwright and Cucumber test reports for every release.
+
+---
