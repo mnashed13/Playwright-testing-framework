@@ -46,7 +46,7 @@ jobs:
           USERNAME: ${{ secrets.TEST_USERNAME }}
           PASSWORD: ${{ secrets.TEST_PASSWORD }}
         run: |
-          npx browserstack-node-sdk cucumber-js
+          npm run browserstack-node-sdk test
 
       - name: Upload BrowserStack Test Results
         if: always()
