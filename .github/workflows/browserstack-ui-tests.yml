@@ -16,28 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [chrome, firefox, safari, edge]
-        include:
-          - browser: chrome
-            browserName: Chrome
-            os: Windows
-            osVersion: 11
-          - browser: firefox
-            browserName: Firefox
-            os: Windows
-            osVersion: 11
-          - browser: safari
-            browserName: Safari
-            os: OS X
-            osVersion: Monterey
-          - browser: edge
-            browserName: Edge
-            os: Windows
-            osVersion: 11
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -54,13 +32,13 @@ jobs:
       - name: Compile TypeScript
         run: npm run pretest
 
-      - name: Run BrowserStack UI Tests
+      - name: Run BrowserStack Tests
         env:
           BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
           BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           BROWSERSTACK_PROJECT_NAME: Playwright Testing Framework
           BROWSERSTACK_BUILD_NAME: build-${{ github.run_number }}-${{ github.sha }}
-          BROWSERSTACK_SESSION_NAME: ${{ matrix.browserName }}_${{ github.workflow }}
+          BROWSERSTACK_SESSION_NAME: browserstack_${{ github.workflow }}
           BROWSERSTACK_DEBUG: true
           BROWSERSTACK_CONSOLE_LOGS: true
           BROWSERSTACK_NETWORK_LOGS: true
@@ -68,143 +46,20 @@ jobs:
           USERNAME: ${{ secrets.TEST_USERNAME }}
           PASSWORD: ${{ secrets.TEST_PASSWORD }}
         run: |
-          npx playwright install
-          npx playwright test --config=playwright.browserstack.config.ts --project=browserstack-${{ matrix.browser }}
+          npm run run-browserstack-working
 
       - name: Upload BrowserStack Test Results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: browserstack-results-${{ matrix.browser }}
+          name: browserstack-results
           path: |
-            browserstack-report/
-            browserstack-results.json
+            reports/
             test-results/
 
       - name: Upload Screenshots and Videos
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: browserstack-screenshots-${{ matrix.browser }}
-          path: test-results/
-
-  browserstack-mobile-tests:
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-
-    strategy:
-      fail-fast: false
-      matrix:
-        device: [chrome-mobile, safari-mobile]
-        include:
-          - device: chrome-mobile
-            browserName: Chrome
-            deviceName: Samsung Galaxy S21
-            os: android
-            osVersion: 11.0
-          - device: safari-mobile
-            browserName: Safari
-            deviceName: iPhone 12
-            os: ios
-            osVersion: 14
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Use Node.js 18
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Compile TypeScript
-        run: npm run pretest
-
-      - name: Run BrowserStack Mobile Tests
-        env:
-          BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
-          BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          BROWSERSTACK_PROJECT_NAME: Playwright Testing Framework
-          BROWSERSTACK_BUILD_NAME: build-${{ github.run_number }}-${{ github.sha }}
-          BROWSERSTACK_SESSION_NAME: ${{ matrix.deviceName }}_${{ github.workflow }}
-          BROWSERSTACK_DEBUG: true
-          BROWSERSTACK_CONSOLE_LOGS: true
-          BROWSERSTACK_NETWORK_LOGS: true
-          BASE_URL: ${{ secrets.BASE_URL || 'https://www.google.com' }}
-          USERNAME: ${{ secrets.TEST_USERNAME }}
-          PASSWORD: ${{ secrets.TEST_PASSWORD }}
-        run: |
-          npx playwright test --config=playwright.browserstack.config.ts --project=browserstack-${{ matrix.device }}
-
-      - name: Upload BrowserStack Mobile Test Results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: browserstack-mobile-results-${{ matrix.device }}
-          path: |
-            browserstack-report/
-            browserstack-results.json
-            test-results/
-
-      - name: Upload Mobile Screenshots and Videos
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: browserstack-mobile-screenshots-${{ matrix.device }}
-          path: test-results/
-
-  browserstack-cucumber-tests:
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Use Node.js 18
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Compile TypeScript
-        run: npm run pretest
-
-      - name: Run BrowserStack Cucumber Tests
-        env:
-          BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
-          BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          BROWSERSTACK_PROJECT_NAME: Playwright Testing Framework
-          BROWSERSTACK_BUILD_NAME: build-${{ github.run_number }}-${{ github.sha }}
-          BROWSERSTACK_SESSION_NAME: cucumber_browserstack_${{ github.workflow }}
-          BROWSERSTACK_DEBUG: true
-          BROWSERSTACK_CONSOLE_LOGS: true
-          BROWSERSTACK_NETWORK_LOGS: true
-          BASE_URL: ${{ secrets.BASE_URL || 'https://www.google.com' }}
-          USERNAME: ${{ secrets.TEST_USERNAME }}
-          PASSWORD: ${{ secrets.TEST_PASSWORD }}
-        run: |
-          npm run test:browserstack
-
-      - name: Upload Cucumber BrowserStack Results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: browserstack-cucumber-results
-          path: |
-            test-results/
-            reports/
-
-      - name: Upload Cucumber Screenshots and Videos
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: browserstack-cucumber-screenshots
+          name: browserstack-screenshots
           path: test-results/
