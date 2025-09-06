@@ -1,3 +1,278 @@
 2025-09-06 20:59:56 - [32minfo[39m: Creating configuration file...
 2025-09-06 20:59:56 - [32minfo[39m: Adding new script(s) in package.json...
 2025-09-06 20:59:56 - [32minfo[39m: Setup completed
+2025-09-06 21:09:38 - [32minfo[39m: Reading configs from /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/browserstack.yml
+2025-09-06 21:09:38 - [32minfo[39m: Log Directory has been set to /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/log
+2025-09-06 21:09:38 - [32minfo[39m: Log Directory has been set to /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/log
+2025-09-06 21:09:38 - [32minfo[39m: Running SDK with args /Users/michaelnashed/.nvm/versions/node/v20.19.0/bin/node /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/.bin/browserstack-node-sdk cucumber-js --config cucumber.cjs --profile browserstack --tags @smoke
+2025-09-06 21:09:38 - [32minfo[39m: SDK run started with id: 409feaf9-0b95-4d69-bebe-c35843b262c2
+2025-09-06 21:09:39 - [31merror[39m: Error: LocalError: Couldn't find binary file
+    at BrowserStackSetup.setupBrowserstackLocal (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/helpers/BrowserStackSetup.js:1:12489)
+    at async BrowserStackSetup.initialize (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/helpers/BrowserStackSetup.js:1:9870)
+    at async run (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/cucumber-js/command.js:2:9370)
+    at async captureError (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/runner.js:2:1797)
+2025-09-06 21:09:38 - [32minfo[39m: Running SDK with args /Users/michaelnashed/.nvm/versions/node/v20.19.0/bin/node /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/.bin/browserstack-node-sdk cucumber-js --config cucumber.cjs --profile browserstack --tags @smoke
+2025-09-06 21:09:38 - [32minfo[39m: SDK run started with id: 409feaf9-0b95-4d69-bebe-c35843b262c2
+2025-09-06 21:09:39 - [31merror[39m: Error: LocalError: Couldn't find binary file
+    at BrowserStackSetup.setupBrowserstackLocal (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/helpers/BrowserStackSetup.js:1:12489)
+    at async BrowserStackSetup.initialize (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/helpers/BrowserStackSetup.js:1:9870)
+    at async run (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/cucumber-js/command.js:2:9370)
+    at async captureError (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/runner.js:2:1797)
+2025-09-06 21:09:40 - [32minfo[39m: [BrowserstackCLI] stop: CLI is not running, skipping stop
+2025-09-06 21:09:40 - [32minfo[39m: [BrowserstackCLI] stop: CLI is not running, skipping stop
+2025-09-06 21:12:35 - [32minfo[39m: Reading configs from /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/browserstack.yml
+2025-09-06 21:12:35 - [32minfo[39m: Log Directory has been set to /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/log
+2025-09-06 21:12:35 - [32minfo[39m: Log Directory has been set to /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/log
+2025-09-06 21:12:35 - [32minfo[39m: Running SDK with args /Users/michaelnashed/.nvm/versions/node/v20.19.0/bin/node /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/.bin/browserstack-node-sdk cucumber-js
+2025-09-06 21:12:35 - [32minfo[39m: SDK run started with id: ca3e0182-dd54-45ac-879e-be65275fbae8
+2025-09-06 21:12:35 - [32minfo[39m: Running SDK with args /Users/michaelnashed/.nvm/versions/node/v20.19.0/bin/node /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/.bin/browserstack-node-sdk cucumber-js
+2025-09-06 21:12:35 - [32minfo[39m: SDK run started with id: ca3e0182-dd54-45ac-879e-be65275fbae8
+2025-09-06 21:12:36 - [32minfo[39m: [BrowserstackCLI] startMain: Starting main process
+2025-09-06 21:12:36 - [32minfo[39m: [BrowserstackCLI] startMain: Starting main process
+2025-09-06 21:12:36 - [32minfo[39m: [CLIUtils] Current CLI Path Found: 
+2025-09-06 21:12:36 - [32minfo[39m: [CLIUtils] Current CLI Path Found: 
+2025-09-06 21:12:36 - [32minfo[39m: [BrowserstackCLI] spawning command=',sdk'
+2025-09-06 21:12:36 - [32minfo[39m: [BrowserstackCLI] spawning command=',sdk'
+2025-09-06 21:12:36 - [31merror[39m: [BrowserstackCLI] bootstrap: failed to bootstrap=TypeError [ERR_INVALID_ARG_TYPE]: The "file" argument must be of type string. Received null
+    at normalizeSpawnArguments (node:child_process:548:3)
+    at spawn (node:child_process:755:13)
+    at Object.efVar (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:9382)
+    at BrowserstackCLI.start (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:10180)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BrowserstackCLI.startMain (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:6667)
+    at async BrowserstackCLI.bootstrap (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:6124)
+    at async run (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/cucumber-js/command.js:2:9853)
+    at async captureError (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/runner.js:2:1797)
+2025-09-06 21:12:36 - [32minfo[39m: [BrowserstackCLI] stop: CLI is not running, skipping stop
+2025-09-06 21:12:36 - [31merror[39m: [BrowserstackCLI] bootstrap: failed to bootstrap=TypeError [ERR_INVALID_ARG_TYPE]: The "file" argument must be of type string. Received null
+    at normalizeSpawnArguments (node:child_process:548:3)
+    at spawn (node:child_process:755:13)
+    at Object.efVar (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:9382)
+    at BrowserstackCLI.start (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:10180)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BrowserstackCLI.startMain (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:6667)
+    at async BrowserstackCLI.bootstrap (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:6124)
+    at async run (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/cucumber-js/command.js:2:9853)
+    at async captureError (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/runner.js:2:1797)
+2025-09-06 21:12:36 - [32minfo[39m: [BrowserstackCLI] stop: CLI is not running, skipping stop
+2025-09-06 21:12:38 - [31merror[39m: Access to BrowserStack denied due to incorrect credentials.
+2025-09-06 21:12:38 - [31merror[39m: Access to BrowserStack denied due to incorrect credentials.
+2025-09-06 21:12:42 - [32minfo[39m: [BrowserstackCLI] startMain: Starting main process
+2025-09-06 21:12:42 - [32minfo[39m: [CLIUtils] Current CLI Path Found: 
+2025-09-06 21:12:42 - [32minfo[39m: [BrowserstackCLI] startMain: Starting main process
+2025-09-06 21:12:42 - [32minfo[39m: [CLIUtils] Current CLI Path Found: 
+2025-09-06 21:12:42 - [32minfo[39m: [BrowserstackCLI] startMain: Starting main process
+2025-09-06 21:12:42 - [32minfo[39m: [CLIUtils] Current CLI Path Found: 
+2025-09-06 21:12:42 - [32minfo[39m: [BrowserstackCLI] spawning command=',sdk'
+2025-09-06 21:12:42 - [31merror[39m: [BrowserstackCLI] bootstrap: failed to bootstrap=TypeError: The "file" argument must be of type string. Received null
+    at normalizeSpawnArguments (node:child_process:548:3)
+    at spawn (node:child_process:755:13)
+    at Object.efVar (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:9382)
+    at BrowserstackCLI.start (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:10180)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BrowserstackCLI.startMain (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:6667)
+    at async BrowserstackCLI.bootstrap (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:6124)
+    at async Object.<anonymous> (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/cucumber-js/test.setup.js:1:6165)
+    at async wrapPromiseWithTimeout (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/@cucumber/cucumber/src/time.ts:55:10)
+    at async Object.run (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/@cucumber/cucumber/src/user_code_runner.ts:86:16)
+2025-09-06 21:12:42 - [32minfo[39m: [BrowserstackCLI] stop: CLI is not running, skipping stop
+2025-09-06 21:12:42 - [32minfo[39m: [BrowserstackCLI] spawning command=',sdk'
+2025-09-06 21:12:42 - [31merror[39m: [BrowserstackCLI] bootstrap: failed to bootstrap=TypeError: The "file" argument must be of type string. Received null
+    at normalizeSpawnArguments (node:child_process:548:3)
+    at spawn (node:child_process:755:13)
+    at Object.efVar (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:9382)
+    at BrowserstackCLI.start (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:10180)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BrowserstackCLI.startMain (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:6667)
+    at async BrowserstackCLI.bootstrap (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:6124)
+    at async Object.<anonymous> (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/cucumber-js/test.setup.js:1:6165)
+    at async wrapPromiseWithTimeout (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/@cucumber/cucumber/src/time.ts:55:10)
+    at async Object.run (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/@cucumber/cucumber/src/user_code_runner.ts:86:16)
+2025-09-06 21:12:42 - [32minfo[39m: [BrowserstackCLI] stop: CLI is not running, skipping stop
+2025-09-06 21:12:42 - [32minfo[39m: [BrowserstackCLI] spawning command=',sdk'
+2025-09-06 21:12:42 - [31merror[39m: [BrowserstackCLI] bootstrap: failed to bootstrap=TypeError: The "file" argument must be of type string. Received null
+    at normalizeSpawnArguments (node:child_process:548:3)
+    at spawn (node:child_process:755:13)
+    at Object.efVar (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:9382)
+    at BrowserstackCLI.start (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:10180)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BrowserstackCLI.startMain (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:6667)
+    at async BrowserstackCLI.bootstrap (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/v2/browserstackCLI.js:1:6124)
+    at async Object.<anonymous> (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/browserstack-node-sdk/src/bin/cucumber-js/test.setup.js:1:6165)
+    at async wrapPromiseWithTimeout (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/@cucumber/cucumber/src/time.ts:55:10)
+    at async Object.run (/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/@cucumber/cucumber/src/user_code_runner.ts:86:16)
+2025-09-06 21:12:42 - [32minfo[39m: [BrowserstackCLI] stop: CLI is not running, skipping stop
+2025-09-06 21:12:47 - [32minfo[39m: [BrowserstackCLI] stop: CLI is not running, skipping stop
+2025-09-06 21:12:47 - [32minfo[39m: [BrowserstackCLI] stop: CLI is not running, skipping stop
+2025-09-06 21:12:48 - [31merror[39m: Error while getting build link. Error: HTTP Basic: Access denied.
+
+2025-09-06 21:12:48 - [31merror[39m: Error while getting build link. Error: HTTP Basic: Access denied.
+
+2025-09-06 21:12:48 - [32minfo[39m: SDK run ended for id: ca3e0182-dd54-45ac-879e-be65275fbae8, testhub id: undefined
+2025-09-06 21:12:48 - [32minfo[39m: SDK run ended for id: ca3e0182-dd54-45ac-879e-be65275fbae8, testhub id: undefined
+2025-09-06 21:18:40 - [32minfo[39m: Reading configs from /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/browserstack.yml
+2025-09-06 21:18:40 - [32minfo[39m: Log Directory has been set to /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/log
+2025-09-06 21:18:40 - [32minfo[39m: Skipping buildIdentifier as BROWSERSTACK_BUILD_NAME is set
+2025-09-06 21:18:40 - [32minfo[39m: Log Directory has been set to /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/log
+2025-09-06 21:18:41 - [32minfo[39m: Running SDK with args /Users/michaelnashed/.nvm/versions/node/v20.19.0/bin/node /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/.bin/browserstack-node-sdk cucumber-js --config cucumber.cjs --profile browserstack
+2025-09-06 21:18:41 - [32minfo[39m: SDK run started with id: f8ac852d-1be3-45c9-aa8e-3064b654abab
+2025-09-06 21:18:41 - [32minfo[39m: Running SDK with args /Users/michaelnashed/.nvm/versions/node/v20.19.0/bin/node /Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/node_modules/.bin/browserstack-node-sdk cucumber-js --config cucumber.cjs --profile browserstack
+2025-09-06 21:18:41 - [32minfo[39m: SDK run started with id: f8ac852d-1be3-45c9-aa8e-3064b654abab
+2025-09-06 21:18:42 - [32minfo[39m: [BrowserstackCLI] startMain: Starting main process
+2025-09-06 21:18:42 - [32minfo[39m: [BrowserstackCLI] startMain: Starting main process
+2025-09-06 21:18:42 - [32minfo[39m: [CLIUtils] Current CLI Path Found: 
+2025-09-06 21:18:42 - [32minfo[39m: [CLIUtils] Current CLI Path Found: 
+2025-09-06 21:18:46 - [32minfo[39m: [BrowserstackCLI] spawning command='/Users/michaelnashed/.browserstack/cli/binary-macos-arm64,sdk'
+2025-09-06 21:18:46 - [32minfo[39m: [BrowserstackCLI] spawning command='/Users/michaelnashed/.browserstack/cli/binary-macos-arm64,sdk'
+2025-09-06 21:18:47 - [32minfo[39m: [BrowserstackCLI] CLI params loaded: {"id":"2af220c3-2c6f-44a7-902f-60827d8fdadb","listen":"unix:/tmp/sdk-platform-2af220c3-2c6f-44a7-902f-60827d8fdadb.sock"}
+2025-09-06 21:18:47 - [32minfo[39m: [BrowserstackCLI] CLI params loaded: {"id":"2af220c3-2c6f-44a7-902f-60827d8fdadb","listen":"unix:/tmp/sdk-platform-2af220c3-2c6f-44a7-902f-60827d8fdadb.sock"}
+2025-09-06 21:18:47 - [32minfo[39m: [GrpcClient] Connected to gRPC server at unix:/tmp/sdk-platform-2af220c3-2c6f-44a7-902f-60827d8fdadb.sock
+2025-09-06 21:18:47 - [32minfo[39m: [GrpcClient] Initialized gRPC client with bin session id: 2af220c3-2c6f-44a7-902f-60827d8fdadb and listen address: unix:/tmp/sdk-platform-2af220c3-2c6f-44a7-902f-60827d8fdadb.sock
+2025-09-06 21:18:47 - [32minfo[39m: [GrpcClient] startBinSession: Calling startBinSession
+2025-09-06 21:18:47 - [32minfo[39m: [GrpcClient] setCliArgs: cliArgs=["cucumber-js","--config","cucumber.cjs","--profile","browserstack"], parsedConfig=[]
+2025-09-06 21:18:47 - [32minfo[39m: [GrpcClient] Connected to gRPC server at unix:/tmp/sdk-platform-2af220c3-2c6f-44a7-902f-60827d8fdadb.sock
+2025-09-06 21:18:47 - [32minfo[39m: [GrpcClient] Initialized gRPC client with bin session id: 2af220c3-2c6f-44a7-902f-60827d8fdadb and listen address: unix:/tmp/sdk-platform-2af220c3-2c6f-44a7-902f-60827d8fdadb.sock
+2025-09-06 21:18:47 - [32minfo[39m: [GrpcClient] startBinSession: Calling startBinSession
+2025-09-06 21:18:47 - [32minfo[39m: [GrpcClient] setCliArgs: cliArgs=["cucumber-js","--config","cucumber.cjs","--profile","browserstack"], parsedConfig=[]
+2025-09-06 21:18:48 - [32minfo[39m: [GrpcClient] StartBinSession successful
+2025-09-06 21:18:48 - [32minfo[39m: [GrpcClient] StartBinSession successful
+2025-09-06 21:18:48 - [32minfo[39m: [BrowserstackCLI] loadModules: Loading modules
+2025-09-06 21:18:48 - [32minfo[39m: [BrowserstackCLI] loadModules: binSessionId=2af220c3-2c6f-44a7-902f-60827d8fdadb
+2025-09-06 21:18:48 - [32minfo[39m: [BrowserstackCLI] loading Modules.
+2025-09-06 21:18:48 - [32minfo[39m: [BrowserstackCLI] setCliArgs: cliArgs=["cucumber-js","--config","cucumber.cjs","--profile","browserstack"]
+2025-09-06 21:18:48 - [32minfo[39m: [BrowserstackCLI] loadModules: Loading modules
+2025-09-06 21:18:48 - [32minfo[39m: [BrowserstackCLI] loadModules: binSessionId=2af220c3-2c6f-44a7-902f-60827d8fdadb
+2025-09-06 21:18:48 - [32minfo[39m: [BrowserstackCLI] loading Modules.
+2025-09-06 21:18:48 - [32minfo[39m: [BrowserstackCLI] setCliArgs: cliArgs=["cucumber-js","--config","cucumber.cjs","--profile","browserstack"]
+2025-09-06 21:18:54 - [32minfo[39m: [BrowserstackCLI] Starting as child process with session ID: 2af220c3-2c6f-44a7-902f-60827d8fdadb
+2025-09-06 21:18:54 - [32minfo[39m: [GrpcClient] Connected to gRPC server at unix:/tmp/sdk-platform-2af220c3-2c6f-44a7-902f-60827d8fdadb.sock
+2025-09-06 21:18:54 - [32minfo[39m: [GrpcClient] Connecting bin session
+2025-09-06 21:18:54 - [32minfo[39m: [BrowserstackCLI] Starting as child process with session ID: 2af220c3-2c6f-44a7-902f-60827d8fdadb
+2025-09-06 21:18:54 - [32minfo[39m: [GrpcClient] Connected to gRPC server at unix:/tmp/sdk-platform-2af220c3-2c6f-44a7-902f-60827d8fdadb.sock
+2025-09-06 21:18:54 - [32minfo[39m: [GrpcClient] Connecting bin session
+2025-09-06 21:18:54 - [32minfo[39m: [BrowserstackCLI] Starting as child process with session ID: 2af220c3-2c6f-44a7-902f-60827d8fdadb
+2025-09-06 21:18:54 - [32minfo[39m: [GrpcClient] Connected to gRPC server at unix:/tmp/sdk-platform-2af220c3-2c6f-44a7-902f-60827d8fdadb.sock
+2025-09-06 21:18:54 - [32minfo[39m: [GrpcClient] Connecting bin session
+2025-09-06 21:18:54 - [32minfo[39m: [GrpcClient] ConnectBinSession successful
+2025-09-06 21:18:54 - [32minfo[39m: [GrpcClient] ConnectBinSession successful
+2025-09-06 21:18:54 - [32minfo[39m: [GrpcClient] ConnectBinSession successful
+2025-09-06 21:18:54 - [32minfo[39m: [BrowserstackCLI] loadModules: Loading modules
+2025-09-06 21:18:54 - [32minfo[39m: [BrowserstackCLI] loadModules: binSessionId=2af220c3-2c6f-44a7-902f-60827d8fdadb
+2025-09-06 21:18:54 - [32minfo[39m: [BrowserstackCLI] loading Modules.
+2025-09-06 21:18:54 - [32minfo[39m: [BrowserstackCLI] loadModules: Loading modules
+2025-09-06 21:18:54 - [32minfo[39m: [BrowserstackCLI] loadModules: binSessionId=2af220c3-2c6f-44a7-902f-60827d8fdadb
+2025-09-06 21:18:54 - [32minfo[39m: [BrowserstackCLI] loading Modules.
+2025-09-06 21:18:54 - [32minfo[39m: [BrowserstackCLI] loadModules: Loading modules
+2025-09-06 21:18:54 - [32minfo[39m: [BrowserstackCLI] loadModules: binSessionId=2af220c3-2c6f-44a7-902f-60827d8fdadb
+2025-09-06 21:18:54 - [32minfo[39m: [BrowserstackCLI] loading Modules.
+2025-09-06 21:18:54 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: created instance for target=98121:0, state=AutomationFrameworkState.PLAYWRIGHT_DISPATCH
+2025-09-06 21:18:54 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: created instance for target=98122:0, state=AutomationFrameworkState.PLAYWRIGHT_DISPATCH
+2025-09-06 21:18:54 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: saved instance contextId=6ce48d8e13facac397e0f8ee219083fb5279ac1baa68dafd08f59c2441bb3fdc target=98121:0
+2025-09-06 21:18:54 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: saved instance contextId=14efd263f844c12756edcae537fd2ee2f47eb864db96201d011915bdfc0a2ec1 target=98122:0
+2025-09-06 21:18:59 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:18:59 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:18:59 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:18:59 - [32minfo[39m: [GrpcClient] Sending DriverInit
+2025-09-06 21:18:59 - [32minfo[39m: [GrpcClient] DriverInit request successful
+2025-09-06 21:18:59 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:18:59 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:18:59 - [32minfo[39m: [GrpcClient] Sending TestSessionEvent
+2025-09-06 21:18:59 - [32minfo[39m: [GrpcClient] TestSessionEvent request successful
+2025-09-06 21:18:59 - [32minfo[39m: [ObservabilityModule] onBeforeTest: TEST REPORTING AND ANALYTICS sync done
+2025-09-06 21:18:59 - [32minfo[39m: [GrpcClient] Sending DriverInit
+2025-09-06 21:18:59 - [32minfo[39m: [GrpcClient] DriverInit request successful
+2025-09-06 21:19:00 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:00 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:00 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:00 - [32minfo[39m: [GrpcClient] Sending DriverInit
+2025-09-06 21:19:00 - [32minfo[39m: [GrpcClient] DriverInit request successful
+2025-09-06 21:19:00 - [32minfo[39m: [PlaywrightDriverModule] testId: 39448291-e5af-479a-b990-88613190627a
+2025-09-06 21:19:00 - [32minfo[39m: [PlaywrightDriverModule] testData from onAfterTest: { uuid: 'ef45b6bd-5e9c-41c2-9419-11554f5259d3' }
+2025-09-06 21:19:00 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:00 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:00 - [32minfo[39m: [GrpcClient] Sending TestSessionEvent
+2025-09-06 21:19:00 - [32minfo[39m: [GrpcClient] TestSessionEvent request successful
+2025-09-06 21:19:00 - [32minfo[39m: [ObservabilityModule] onBeforeTest: TEST REPORTING AND ANALYTICS sync done
+2025-09-06 21:19:02 - [32minfo[39m: [GrpcClient] Sending DriverInit
+2025-09-06 21:19:02 - [32minfo[39m: [GrpcClient] DriverInit request successful
+2025-09-06 21:19:02 - [32minfo[39m: [PlaywrightDriverModule] testId: 228c1de2-2902-4df3-b2a9-87c12b6d7a33
+2025-09-06 21:19:02 - [32minfo[39m: [PlaywrightDriverModule] testData from onAfterTest: { uuid: 'ef45b6bd-5e9c-41c2-9419-11554f5259d3' }
+2025-09-06 21:19:03 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: created instance for target=98147:0, state=AutomationFrameworkState.PLAYWRIGHT_DISPATCH
+2025-09-06 21:19:03 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: saved instance contextId=6eb1b4fdb0bbef4eae4a8517184f091dc888feb9c96a82700e786b5bfad2a234 target=98147:0
+2025-09-06 21:19:03 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:03 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:03 - [32minfo[39m: [GrpcClient] Sending DriverInit
+2025-09-06 21:19:03 - [32minfo[39m: [GrpcClient] DriverInit request successful
+2025-09-06 21:19:04 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:04 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:04 - [32minfo[39m: [GrpcClient] Sending TestSessionEvent
+2025-09-06 21:19:04 - [32minfo[39m: [GrpcClient] TestSessionEvent request successful
+2025-09-06 21:19:04 - [32minfo[39m: [ObservabilityModule] onBeforeTest: TEST REPORTING AND ANALYTICS sync done
+2025-09-06 21:19:05 - [32minfo[39m: [PlaywrightDriverModule] testId: 9d992aaf-7c24-4fbd-8fd2-5e7516eca212
+2025-09-06 21:19:05 - [32minfo[39m: [PlaywrightDriverModule] testData from onAfterTest: { uuid: 'ef45b6bd-5e9c-41c2-9419-11554f5259d3' }
+2025-09-06 21:19:07 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:09 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:12 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:12 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:12 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:12 - [32minfo[39m: [GrpcClient] Sending DriverInit
+2025-09-06 21:19:12 - [32minfo[39m: [GrpcClient] DriverInit request successful
+2025-09-06 21:19:12 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:12 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:12 - [32minfo[39m: [GrpcClient] Sending TestSessionEvent
+2025-09-06 21:19:12 - [32minfo[39m: [GrpcClient] TestSessionEvent request successful
+2025-09-06 21:19:12 - [32minfo[39m: [ObservabilityModule] onBeforeTest: TEST REPORTING AND ANALYTICS sync done
+2025-09-06 21:19:13 - [32minfo[39m: [GrpcClient] Sending DriverInit
+2025-09-06 21:19:13 - [32minfo[39m: [GrpcClient] DriverInit request successful
+2025-09-06 21:19:13 - [32minfo[39m: [PlaywrightDriverModule] testId: 12ab820e-dfd5-4c4a-bf91-6cf9e3984b1c
+2025-09-06 21:19:13 - [32minfo[39m: [PlaywrightDriverModule] testData from onAfterTest: { uuid: 'ef45b6bd-5e9c-41c2-9419-11554f5259d3' }
+2025-09-06 21:19:15 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:15 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:15 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:15 - [32minfo[39m: [GrpcClient] Sending DriverInit
+2025-09-06 21:19:15 - [32minfo[39m: [GrpcClient] DriverInit request successful
+2025-09-06 21:19:16 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:16 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:16 - [32minfo[39m: [GrpcClient] Sending TestSessionEvent
+2025-09-06 21:19:16 - [32minfo[39m: [GrpcClient] TestSessionEvent request successful
+2025-09-06 21:19:16 - [32minfo[39m: [ObservabilityModule] onBeforeTest: TEST REPORTING AND ANALYTICS sync done
+2025-09-06 21:19:17 - [32minfo[39m: [GrpcClient] Sending DriverInit
+2025-09-06 21:19:17 - [32minfo[39m: [GrpcClient] DriverInit request successful
+2025-09-06 21:19:17 - [32minfo[39m: [PlaywrightDriverModule] testId: 379b8bb0-a77f-493f-8a5f-fb9f9626f1aa
+2025-09-06 21:19:17 - [32minfo[39m: [PlaywrightDriverModule] testData from onAfterTest: { uuid: 'ef45b6bd-5e9c-41c2-9419-11554f5259d3' }
+2025-09-06 21:19:20 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:20 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:20 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:20 - [32minfo[39m: [GrpcClient] Sending DriverInit
+2025-09-06 21:19:20 - [32minfo[39m: [GrpcClient] DriverInit request successful
+2025-09-06 21:19:22 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:22 - [32minfo[39m: [PlaywrightAutomationFramework] trackPlaywrightInstance: instance already exists
+2025-09-06 21:19:22 - [32minfo[39m: [GrpcClient] Sending TestSessionEvent
+2025-09-06 21:19:22 - [32minfo[39m: [GrpcClient] TestSessionEvent request successful
+2025-09-06 21:19:22 - [32minfo[39m: [ObservabilityModule] onBeforeTest: TEST REPORTING AND ANALYTICS sync done
+2025-09-06 21:19:23 - [32minfo[39m: [PlaywrightDriverModule] testId: dd4f4ca8-26e2-4cfe-bf8d-d4ae87664eac
+2025-09-06 21:19:23 - [32minfo[39m: [PlaywrightDriverModule] testData from onAfterTest: { uuid: 'ef45b6bd-5e9c-41c2-9419-11554f5259d3' }
+2025-09-06 21:19:37 - [32minfo[39m: Visit https://automation.browserstack.com/builds/hkspdxh3mig7cgumzxoxb7bms0wwzbhjrztsqxrh to view build report, insights, and many more debugging information all at one place!
+
+2025-09-06 21:19:37 - [32minfo[39m: Visit https://automation.browserstack.com/builds/hkspdxh3mig7cgumzxoxb7bms0wwzbhjrztsqxrh to view build report, insights, and many more debugging information all at one place!
+
+2025-09-06 21:19:37 - [32minfo[39m: [BrowserstackCLI] stop: CLI stop triggered
+2025-09-06 21:19:37 - [32minfo[39m: [GrpcClient] Stopping bin session
+2025-09-06 21:19:37 - [32minfo[39m: [BrowserstackCLI] stop: CLI stop triggered
+2025-09-06 21:19:37 - [32minfo[39m: [GrpcClient] Stopping bin session
+2025-09-06 21:19:40 - [32minfo[39m: [GrpcClient] StopBinSession successful
+2025-09-06 21:19:40 - [32minfo[39m: [GrpcClient] StopBinSession successful
+2025-09-06 21:19:40 - [32minfo[39m: [BrowserstackCLI] stop: stopBinSession build_link=null hashed_id=null o11y_uuid=hkspdxh3mig7cgumzxoxb7bms0wwzbhjrztsqxrh
+2025-09-06 21:19:40 - [32minfo[39m: [BrowserstackCLI] Unconfiguring modules
+2025-09-06 21:19:40 - [32minfo[39m: [BrowserstackCLI] stop: channel closed
+2025-09-06 21:19:40 - [32minfo[39m: [BrowserstackCLI] stop: stopBinSession build_link=null hashed_id=null o11y_uuid=hkspdxh3mig7cgumzxoxb7bms0wwzbhjrztsqxrh
+2025-09-06 21:19:40 - [32minfo[39m: [BrowserstackCLI] Unconfiguring modules
+2025-09-06 21:19:40 - [32minfo[39m: [BrowserstackCLI] stop: channel closed
+2025-09-06 21:19:45 - [32minfo[39m: [BrowserstackCLI] stop: shutting down CLI
+2025-09-06 21:19:45 - [32minfo[39m: [BrowserstackCLI] stop: shutting down CLI
+2025-09-06 21:19:45 - [32minfo[39m: [BrowserstackCLI] stop: CLI process exited
+2025-09-06 21:19:45 - [32minfo[39m: [BrowserstackCLI] stop: CLI process exited
+2025-09-06 21:19:46 - [32minfo[39m: View build on BrowserStack dashboard: https://automate.browserstack.com/dashboard/v2/builds/a4fc28b95af66a66c1913290c5981433251783ba
+2025-09-06 21:19:46 - [32minfo[39m: View build on BrowserStack dashboard: https://automate.browserstack.com/dashboard/v2/builds/a4fc28b95af66a66c1913290c5981433251783ba
+2025-09-06 21:19:47 - [32minfo[39m: SDK run ended for id: f8ac852d-1be3-45c9-aa8e-3064b654abab, testhub id: hkspdxh3mig7cgumzxoxb7bms0wwzbhjrztsqxrh
+2025-09-06 21:19:47 - [32minfo[39m: SDK run ended for id: f8ac852d-1be3-45c9-aa8e-3064b654abab, testhub id: hkspdxh3mig7cgumzxoxb7bms0wwzbhjrztsqxrh

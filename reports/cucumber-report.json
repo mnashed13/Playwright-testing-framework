@@ -14,7 +14,15 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 220834
+              "duration": 619750
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 824999
             }
           },
           {
@@ -27,7 +35,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 967091959
+              "duration": 909479041
             }
           },
           {
@@ -40,7 +48,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2938791
+              "duration": 5064415
             }
           },
           {
@@ -53,7 +61,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 526124
+              "duration": 1535957
             }
           },
           {
@@ -61,7 +69,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 220708
+              "duration": 267915
             },
             "embeddings": [
               {
@@ -69,6 +77,14 @@
                 "mime_type": "text/plain"
               }
             ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 945749
+            }
           }
         ],
         "tags": [
@@ -95,7 +111,15 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 34000
+              "duration": 338500
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 217042
             }
           },
           {
@@ -108,7 +132,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26500
+              "duration": 576581
             }
           },
           {
@@ -121,7 +145,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 240188250
+              "duration": 233833665
             }
           },
           {
@@ -134,7 +158,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1186374
+              "duration": 1614081
             }
           },
           {
@@ -147,7 +171,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 674082
+              "duration": 1056290
             }
           },
           {
@@ -160,7 +184,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 488000
+              "duration": 528916
             }
           },
           {
@@ -168,7 +192,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 114124
+              "duration": 55749
             },
             "embeddings": [
               {
@@ -176,6 +200,14 @@
                 "mime_type": "text/plain"
               }
             ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 390167
+            }
           }
         ],
         "tags": [
@@ -202,7 +234,15 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 46916
+              "duration": 267708
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 296792
             }
           },
           {
@@ -215,7 +255,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 22375
+              "duration": 174332
             }
           },
           {
@@ -228,7 +268,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 76874
+              "duration": 2286373
             }
           },
           {
@@ -241,7 +281,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 224901124
+              "duration": 228497334
             }
           },
           {
@@ -254,7 +294,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1298416
+              "duration": 1598624
             }
           },
           {
@@ -267,7 +307,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 213749
+              "duration": 890665
             }
           },
           {
@@ -275,7 +315,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 155041
+              "duration": 223833
             },
             "embeddings": [
               {
@@ -283,6 +323,14 @@
                 "mime_type": "text/plain"
               }
             ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 408249
+            }
           }
         ],
         "tags": [
@@ -309,7 +357,15 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 50874
+              "duration": 170290
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 224041
             }
           },
           {
@@ -322,7 +378,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 28124
+              "duration": 423958
             }
           },
           {
@@ -335,7 +391,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 328844791
+              "duration": 226023124
             }
           },
           {
@@ -348,7 +404,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1943291
+              "duration": 1726207
             }
           },
           {
@@ -356,7 +412,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 90417
+              "duration": 84708
             },
             "embeddings": [
               {
@@ -364,6 +420,14 @@
                 "mime_type": "text/plain"
               }
             ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 576375
+            }
           }
         ],
         "tags": [
@@ -396,3 +460,4 @@
     "uri": "api-tests/features/echo-api.feature"
   }
 ]
+]]

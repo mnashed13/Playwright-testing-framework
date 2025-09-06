@@ -15,7 +15,8 @@ export const browserstackConfig = {
 	// BrowserStack capabilities
 	capabilities: {
 		'browserstack.debug': process.env.BROWSERSTACK_DEBUG === 'true',
-		'browserstack.console': process.env.BROWSERSTACK_CONSOLE_LOGS === 'true',
+		'browserstack.console':
+			process.env.BROWSERSTACK_CONSOLE_LOGS === 'true' ? 'info' : 'errors',
 		'browserstack.networkLogs':
 			process.env.BROWSERSTACK_NETWORK_LOGS === 'true',
 		'browserstack.local': process.env.BROWSERSTACK_LOCAL === 'true',
@@ -26,28 +27,28 @@ export const browserstackConfig = {
 	browsers: [
 		{
 			name: 'chrome',
-			browserName: 'Chrome',
+			browser: 'chrome',
 			browserVersion: 'latest',
 			os: 'Windows',
 			osVersion: '11',
 		},
 		{
 			name: 'firefox',
-			browserName: 'Firefox',
+			browser: 'playwright-firefox',
 			browserVersion: 'latest',
 			os: 'Windows',
 			osVersion: '11',
 		},
 		{
 			name: 'safari',
-			browserName: 'Safari',
+			browser: 'playwright-webkit',
 			browserVersion: 'latest',
 			os: 'OS X',
 			osVersion: 'Monterey',
 		},
 		{
 			name: 'edge',
-			browserName: 'Edge',
+			browser: 'edge',
 			browserVersion: 'latest',
 			os: 'Windows',
 			osVersion: '11',
@@ -58,14 +59,14 @@ export const browserstackConfig = {
 	mobileBrowsers: [
 		{
 			name: 'chrome-mobile',
-			browserName: 'Chrome',
+			browser: 'chrome',
 			device: 'Samsung Galaxy S21',
 			os: 'android',
 			osVersion: '11.0',
 		},
 		{
 			name: 'safari-mobile',
-			browserName: 'Safari',
+			browser: 'playwright-webkit',
 			device: 'iPhone 12',
 			os: 'ios',
 			osVersion: '14',
