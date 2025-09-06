@@ -145,6 +145,8 @@ graph TD
 - `npm run test:all` - Run all tests
 - `npm run test:api:smoke` - Run API smoke tests
 - `npm run test:echo` - Run Echo API tests specifically
+- `npm run test:browserstack` - Run tests on BrowserStack
+- `npm run test:browserstack:smoke` - Run BrowserStack smoke tests
 
 ### VS Code Debugging
 
@@ -305,10 +307,35 @@ To run tests with a specific browser:
 npx cucumber-js --world-parameters '{"browser":"chromium"}'
 ```
 
+## 🌐 BrowserStack Integration
+
+This project includes comprehensive BrowserStack integration for cross-browser and cross-device testing.
+
+### Features
+
+- **Cross-browser testing**: Chrome, Firefox, Safari, Edge
+- **Mobile device testing**: Android and iOS devices
+- **Parallel execution**: Run tests across multiple browsers simultaneously
+- **CI/CD integration**: Automated testing via GitHub Actions
+- **Detailed reporting**: Screenshots, videos, and logs for failed tests
+
+### Quick Start
+
+1. Set up your BrowserStack credentials (see [BROWSERSTACK_SETUP.md](./BROWSERSTACK_SETUP.md))
+2. Run tests: `npm run test:browserstack`
+3. View results in your BrowserStack dashboard
+
+### Documentation
+
+- [BrowserStack Setup Guide](./BROWSERSTACK_SETUP.md) - Complete setup instructions
+- [BrowserStack Configuration](./browserstack.config.ts) - Configuration options
+- [GitHub Actions Workflow](./.github/workflows/browserstack-ui-tests.yml) - CI/CD integration
+
 **Documentation Links**
 
 - [Playwright Documentation](https://playwright.dev/docs/intro)
 - [Cucumber.js Documentation](https://cucumber.io/docs/cucumber/)
+- [BrowserStack Documentation](https://www.browserstack.com/docs)
 
 **Additional Documentation**
 

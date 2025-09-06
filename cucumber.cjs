@@ -31,4 +31,14 @@ module.exports = {
 		],
 		paths: ['src/features/*.feature', 'api-tests/features/*.feature'],
 	},
+	browserstack: {
+		...common,
+		require: ['src/steps/*.ts', 'src/support/*.ts'],
+		paths: ['src/features/*.feature'],
+		worldParameters: {
+			headless: true,
+			browserstack: true,
+			config: 'playwright.browserstack.config.ts',
+		},
+	},
 };

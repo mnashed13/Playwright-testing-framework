@@ -12,28 +12,21 @@ export default defineConfig({
 	forbidOnly: !!process.env.CI,
 	retries: process.env.CI ? 2 : 0,
 	workers: process.env.CI ? 1 : undefined,
-	reporter: [['line'], ['buildkite-test-collector/playwright/reporter']],
+	reporter: [
+		['line'],
+		['html', { outputFolder: 'browserstack-report' }],
+		['json', { outputFile: 'browserstack-results.json' }],
+	],
 
 	use: {
 		baseURL: process.env.BASE_URL,
 		trace: 'on-first-retry',
 		screenshot: 'only-on-failure',
+		video: 'retain-on-failure',
 	},
+
 	projects: [
-		// Local browser projects
-		{
-			name: 'chromium',
-			use: { ...devices['Desktop Chrome'] },
-		},
-		{
-			name: 'firefox',
-			use: { ...devices['Desktop Firefox'] },
-		},
-		{
-			name: 'webkit',
-			use: { ...devices['Desktop Safari'] },
-		},
-		// BrowserStack projects
+		// BrowserStack Desktop Browsers
 		{
 			name: 'browserstack-chrome',
 			use: {
@@ -45,7 +38,7 @@ export default defineConfig({
 							browserVersion: 'latest',
 							os: 'Windows',
 							osVersion: '11',
-							name: browserstackConfig.sessionName,
+							name: `${browserstackConfig.sessionName}_chrome`,
 							build: browserstackConfig.build,
 							project: browserstackConfig.project,
 							...browserstackConfig.capabilities,
@@ -65,7 +58,7 @@ export default defineConfig({
 							browserVersion: 'latest',
 							os: 'Windows',
 							osVersion: '11',
-							name: browserstackConfig.sessionName,
+							name: `${browserstackConfig.sessionName}_firefox`,
 							build: browserstackConfig.build,
 							project: browserstackConfig.project,
 							...browserstackConfig.capabilities,
@@ -85,7 +78,7 @@ export default defineConfig({
 							browserVersion: 'latest',
 							os: 'OS X',
 							osVersion: 'Monterey',
-							name: browserstackConfig.sessionName,
+							name: `${browserstackConfig.sessionName}_safari`,
 							build: browserstackConfig.build,
 							project: browserstackConfig.project,
 							...browserstackConfig.capabilities,
@@ -105,7 +98,48 @@ export default defineConfig({
 							browserVersion: 'latest',
 							os: 'Windows',
 							osVersion: '11',
-							name: browserstackConfig.sessionName,
+							name: `${browserstackConfig.sessionName}_edge`,
+							build: browserstackConfig.build,
+							project: browserstackConfig.project,
+							...browserstackConfig.capabilities,
+						})
+					)}`,
+				},
+			},
+		},
+		// BrowserStack Mobile Browsers
+		{
+			name: 'browserstack-chrome-mobile',
+			use: {
+				...devices['iPhone 12'],
+				connectOptions: {
+					wsEndpoint: `wss://cdp.browserstack.com/playwright?caps=${encodeURIComponent(
+						JSON.stringify({
+							browserName: 'Chrome',
+							device: 'Samsung Galaxy S21',
+							os: 'android',
+							osVersion: '11.0',
+							name: `${browserstackConfig.sessionName}_chrome_mobile`,
+							build: browserstackConfig.build,
+							project: browserstackConfig.project,
+							...browserstackConfig.capabilities,
+						})
+					)}`,
+				},
+			},
+		},
+		{
+			name: 'browserstack-safari-mobile',
+			use: {
+				...devices['iPhone 12'],
+				connectOptions: {
+					wsEndpoint: `wss://cdp.browserstack.com/playwright?caps=${encodeURIComponent(
+						JSON.stringify({
+							browserName: 'Safari',
+							device: 'iPhone 12',
+							os: 'ios',
+							osVersion: '14',
+							name: `${browserstackConfig.sessionName}_safari_mobile`,
 							build: browserstackConfig.build,
 							project: browserstackConfig.project,
 							...browserstackConfig.capabilities,

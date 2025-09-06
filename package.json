@@ -1,36 +1,52 @@
 {
-	"name": "playwright-cucumber-typescript",
-	"version": "1.0.0",
-	"description": "UI Testing with Playwright + Cucumber + TypeScript",
-	"scripts": {
-		"test": "cucumber-js && node dist/generate-report.js",
-		"test:headed": "cucumber-js --profile headed",
-		"pretest": "tsc",
-		"test:api": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api",
-		"test:all": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile all",
-		"test:api:smoke": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags @smoke",
-		"test:api:regression": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags @regression",
-		"test:api:crud": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags '@get or @post or @put'",
-		"test:api:not-smoke": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags 'not @smoke'",
-		"test:echo": "cucumber-js api-tests/features/echo-api.feature --format json:reports/cucumber-report.json --format html:reports/cucumber-report.html",
-		"release": "semantic-release"
-	},
-	"dependencies": {
-		"@cucumber/cucumber": "^10.3.1",
-		"@playwright/test": "^1.41.0",
-		"axios": "1.6.7",
-		"chai": "4.3.10",
-		"dotenv": "16.4.5"
-	},
-	"devDependencies": {
-		"@types/chai": "4.3.11",
-		"@types/cucumber": "^7.0.0",
-		"@types/node": "18.19.17",
-		"buildkite-test-collector": "^1.8.1",
-		"cross-env": "^7.0.3",
-		"ts-node": "10.9.2",
-		"typescript": "5.3.3",
-		"semantic-release": "^24.2.3"
-	},
-	"release": "semantic-release"
+  "name": "playwright-cucumber-typescript",
+  "version": "1.0.0",
+  "description": "UI Testing with Playwright + Cucumber + TypeScript",
+  "scripts": {
+    "test": "cucumber-js && node dist/generate-report.js",
+    "test:headed": "cucumber-js --profile headed",
+    "pretest": "tsc",
+    "test:api": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api",
+    "test:all": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile all",
+    "test:api:smoke": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags @smoke",
+    "test:api:regression": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags @regression",
+    "test:api:crud": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags '@get or @post or @put'",
+    "test:api:not-smoke": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags 'not @smoke'",
+    "test:echo": "cucumber-js api-tests/features/echo-api.feature --format json:reports/cucumber-report.json --format html:reports/cucumber-report.html",
+    "test:browserstack": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile browserstack",
+    "test:browserstack:smoke": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile browserstack --tags @smoke",
+    "release": "semantic-release",
+    "postinstall": "npm update browserstack-node-sdk",
+    "test-browserstack": "browserstack-node-sdk cucumber-js && node dist/generate-report.js",
+    "test:headed-browserstack": "browserstack-node-sdk cucumber-js --profile headed",
+    "test:api-browserstack": "cross-env NODE_OPTIONS=--loader=ts-node/esm browserstack-node-sdk cucumber-js --config cucumber.cjs --profile api",
+    "test:all-browserstack": "cross-env NODE_OPTIONS=--loader=ts-node/esm browserstack-node-sdk cucumber-js --config cucumber.cjs --profile all",
+    "test:api:smoke-browserstack": "cross-env NODE_OPTIONS=--loader=ts-node/esm browserstack-node-sdk cucumber-js --config cucumber.cjs --profile api --tags @smoke",
+    "test:api:regression-browserstack": "cross-env NODE_OPTIONS=--loader=ts-node/esm browserstack-node-sdk cucumber-js --config cucumber.cjs --profile api --tags @regression",
+    "test:api:crud-browserstack": "cross-env NODE_OPTIONS=--loader=ts-node/esm browserstack-node-sdk cucumber-js --config cucumber.cjs --profile api --tags '@get or @post or @put'",
+    "test:api:not-smoke-browserstack": "cross-env NODE_OPTIONS=--loader=ts-node/esm browserstack-node-sdk cucumber-js --config cucumber.cjs --profile api --tags 'not @smoke'",
+    "test:echo-browserstack": "browserstack-node-sdk cucumber-js api-tests/features/echo-api.feature --format json:reports/cucumber-report.json --format html:reports/cucumber-report.html",
+    "test:browserstack-browserstack": "cross-env NODE_OPTIONS=--loader=ts-node/esm browserstack-node-sdk cucumber-js --config cucumber.cjs --profile browserstack",
+    "test:browserstack:smoke-browserstack": "cross-env NODE_OPTIONS=--loader=ts-node/esm browserstack-node-sdk cucumber-js --config cucumber.cjs --profile browserstack --tags @smoke"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "@playwright/test": "^1.41.0",
+    "axios": "1.6.7",
+    "browserstack-local": "^1.4.8",
+    "chai": "4.3.10",
+    "dotenv": "16.4.5"
+  },
+  "devDependencies": {
+    "@types/chai": "4.3.11",
+    "@types/cucumber": "^7.0.0",
+    "@types/node": "18.19.17",
+    "browserstack-node-sdk": "^1.42.3",
+    "buildkite-test-collector": "^1.8.1",
+    "cross-env": "^7.0.3",
+    "semantic-release": "^24.2.3",
+    "ts-node": "10.9.2",
+    "typescript": "5.3.3"
+  },
+  "release": "semantic-release"
 }
