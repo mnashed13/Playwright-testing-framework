@@ -15,16 +15,13 @@ export class World extends CucumberWorld {
 
 	async init() {
 		// Check if we're running on BrowserStack
+		// For BrowserStack, the SDK patches Playwright to connect to BrowserStack
+		// We still need to call launch/newContext/newPage but the SDK redirects to BrowserStack
 		if (this.parameters?.browserstack || process.env.BROWSERSTACK_USERNAME) {
-			// BrowserStack SDK will handle browser initialization
-			// We don't need to launch a browser here as the SDK does it
-			console.log(
-				'Running on BrowserStack - SDK will handle browser initialization'
-			);
-			return;
+			console.log('Running on BrowserStack - SDK will patch Playwright calls');
 		}
 
-		// Run locally
+		// Initialize browser (locally or via BrowserStack SDK)
 		this.browser = await chromium.launch({
 			headless: this.parameters?.headless !== false, // Use parameter or default to headless
 			slowMo: 100, // Add a small delay between actions to make it more visible
