@@ -14,9 +14,19 @@ export class World extends CucumberWorld {
 	}
 
 	async init() {
-		// Explicitly set headless: false for headed mode
+		// Check if we're running on BrowserStack
+		if (this.parameters?.browserstack || process.env.BROWSERSTACK_USERNAME) {
+			// BrowserStack SDK will handle browser initialization
+			// We don't need to launch a browser here as the SDK does it
+			console.log(
+				'Running on BrowserStack - SDK will handle browser initialization'
+			);
+			return;
+		}
+
+		// Run locally
 		this.browser = await chromium.launch({
-			headless: false, // Force headed mode
+			headless: this.parameters?.headless !== false, // Use parameter or default to headless
 			slowMo: 100, // Add a small delay between actions to make it more visible
 		});
 		this.context = await this.browser.newContext();

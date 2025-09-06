@@ -32,6 +32,14 @@ jobs:
       - name: Compile TypeScript
         run: npm run pretest
 
+      - name: Test BrowserStack Connection
+        env:
+          BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+          BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+        run: |
+          echo "🔍 Testing BrowserStack API connection..."
+          npm run test-browserstack-api
+
       - name: Run BrowserStack Tests
         env:
           BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
