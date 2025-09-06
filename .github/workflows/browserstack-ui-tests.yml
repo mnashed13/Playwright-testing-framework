@@ -46,7 +46,7 @@ jobs:
           USERNAME: ${{ secrets.TEST_USERNAME }}
           PASSWORD: ${{ secrets.TEST_PASSWORD }}
         run: |
-          npm run test:headed-browserstack
+          npm run test:browserstack
 
       - name: Upload BrowserStack Test Results
         if: always()
