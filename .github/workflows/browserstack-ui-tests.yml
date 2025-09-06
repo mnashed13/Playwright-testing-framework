@@ -68,7 +68,7 @@ jobs:
           USERNAME: ${{ secrets.TEST_USERNAME }}
           PASSWORD: ${{ secrets.TEST_PASSWORD }}
         run: |
-          npx playwright install --with-deps ${matrix.browser}
+          npx playwright install
           npx playwright test --config=playwright.browserstack.config.ts --project=browserstack-${{ matrix.browser }}
 
       - name: Upload BrowserStack Test Results
