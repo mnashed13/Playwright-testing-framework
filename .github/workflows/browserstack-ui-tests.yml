@@ -32,6 +32,9 @@ jobs:
       - name: Compile TypeScript
         run: npm run pretest
 
+      - name: Install Playwright Browsers
+        run: npm run install-playwright
+
       - name: Run BrowserStack Tests
         env:
           BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
