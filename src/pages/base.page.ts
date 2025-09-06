@@ -19,8 +19,4 @@ export class BasePage {
 		console.log(`Navigating to: ${url}`); // Debug log
 		await this.page.goto(url);
 	}
-
-	async waitForPageLoad() {
-		await this.page.waitForLoadState('networkidle');
-	}
 }
