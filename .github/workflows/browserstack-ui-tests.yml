@@ -33,7 +33,7 @@ jobs:
         run: npm run pretest
 
       - name: Install Playwright Browsers
-        run: npm run install-playwright
+        run: npx playwright install
 
       - name: Run BrowserStack Tests
         env:
