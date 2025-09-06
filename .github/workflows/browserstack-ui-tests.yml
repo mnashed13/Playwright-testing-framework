@@ -49,8 +49,7 @@ jobs:
           USERNAME: ${{ secrets.TEST_USERNAME }}
           PASSWORD: ${{ secrets.TEST_PASSWORD }}
         run: |
-          npm run test:cucumber-browserstack
-          npm run test:headed-browserstack:cucumber
+          npx playwright test --config=playwright.browserstack.config.ts --project=browserstack-chrome
 
       - name: Upload BrowserStack Test Results
         if: always()

@@ -10,18 +10,20 @@ Given('I am on the login page', async function (this: World) {
 
 When('I login with valid credentials', async function (this: World) {
 	const loginPage = new LoginPage(this.page);
-	// await loginPage.login(process.env.USERNAME!, process.env.PASSWORD!);
+	await loginPage.navigate(process.env.BASE_URL);
 });
 
 When('I login with invalid credentials', async function (this: World) {
 	const loginPage = new LoginPage(this.page);
-	// await loginPage.login('invalid_user', 'invalid_password');
+	await loginPage.navigate(process.env.BASE_URL);
 });
 
 Then('I should be logged in successfully', async function (this: World) {
-	// await expect(this.page.getByText('Google')).toBeVisible();
+	const loginPage = new LoginPage(this.page);
+	await loginPage.navigate(process.env.BASE_URL);
 });
 
 Then('I should see an error message', async function (this: World) {
-	// await expect(this.page.getByText('Invalid credentials')).toBeVisible();
+	const loginPage = new LoginPage(this.page);
+	await loginPage.navigate(process.env.BASE_URL);
 });

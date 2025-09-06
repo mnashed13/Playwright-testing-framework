@@ -121,3 +121,257 @@
 2025-09-06T11:19:39.562Z CLI info  [mikena_nwhv0R]  [hkspdxh3mig7cgumzxoxb7bms0wwzbhjrztsqxrh]  [2af220c3-2c6f-44a7-902f-60827d8fdadb]  [PRODUCTION] Making GET request to https://api.browserstack.com
 2025-09-06T11:19:39.882Z CLI info  [mikena_nwhv0R]  [hkspdxh3mig7cgumzxoxb7bms0wwzbhjrztsqxrh]  [2af220c3-2c6f-44a7-902f-60827d8fdadb]  [PRODUCTION] Making POST request to https://eds.browserstack.com
 2025-09-06T11:19:45.820Z CLI info [main]  [mikena_nwhv0R]  [hkspdxh3mig7cgumzxoxb7bms0wwzbhjrztsqxrh]  [2af220c3-2c6f-44a7-902f-60827d8fdadb]  Received graceful signal termination, performing cleanup
+2025-09-06T12:30:48.421Z CLI info     Config : {"userName":"mikena_nwhv0R","accessKey":"kfJkTqofqbvXbkSiq5KD","projectName":"demo Project","buildName":"build_${BUILD_NUMBER:-local}","buildIdentifier":"#${BUILD_NUMBER}","platforms":[{"os":"OS X","osVersion":"Big Sur","browserName":"Chrome","browserVersion":"latest"},{"os":"Windows","osVersion":10,"browserName":"Edge","browserVersion":"latest"},{"deviceName":"Samsung Galaxy S22 Ultra","browserName":"chrome","osVersion":12}],"parallelsPerPlatform":1,"browserstackLocal":false,"debug":false,"networkLogs":false,"consoleLogs":"errors","testReporting":true}
+2025-09-06T12:30:48.446Z CLI info [testhub:module]  [mikena_nwhv0R]   [95e83543-520e-4374-b268-5d193004be17]  Starting testhub from 35354:0
+2025-09-06T12:30:48.446Z CLI info [testhub:module]  [mikena_nwhv0R]   [95e83543-520e-4374-b268-5d193004be17]  startBuild: payload=
+
+{"started_at":"2025-09-06T12:30:48.446Z","host_info":{"hostname":"Michaels-MacBook-Pro-2.local","platform":"darwin","type":"Darwin","version":"Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000","arch":"arm64"},"ci_info":{"build_number":null},"version_control":{"name":"git","sha":"4ec9bb9f0235b87b0af3d6d78223f0b9f97d46e6","short_sha":"4ec9bb9f02","branch":"testbrowserstack","tag":null,"committer":"mnashed13 <44353375+mnashed13@users.noreply.github.com>","committer_date":"2025-09-06T12:23:15.000Z","author":"mnashed13 <44353375+mnashed13@users.noreply.github.com>","author_date":"2025-09-06T12:23:15.000Z","commit_message":"Update browserstack-ui-tests.yml","root":"/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework","common_git_dir":"/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/.git","worktree_git_dir":"/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/.git","last_tag":null,"commits_since_last_tag":0,"remotes":[{"name":"origin","url":"https://github.com/mnashed13/Playwright-testing-framework.git"}]},"project_name":"demo Project","name":"build_${BUILD_NUMBER:-local}","build_identifier":"#2","build_run_identifier":null,"description":"","tags":[],"failed_tests_rerun":false,"accessibility":{"settings":{}},"framework_details":{"frameworkName":"Playwright","frameworkVersion":"1.50.1","sdkVersion":"1.42.3","cliVersion":"1.6.17","language":"javascript","testFramework":{"name":"Playwright","version":"1.50.1"}},"product_map":{"observability":true,"accessibility":null,"percy":false,"automate":true,"app_automate":false},"browserstackAutomation":true,"test_orchestration":{}}
+2025-09-06T12:30:48.446Z CLI info  [mikena_nwhv0R]   [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:30:49.362Z CLI info [testhub:module]  [mikena_nwhv0R]   [95e83543-520e-4374-b268-5d193004be17]  startBuild: response=tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj
+2025-09-06T12:30:49.364Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making POST request to https://api.browserstack.com
+2025-09-06T12:30:54.762Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making GET request to https://hub.browserstack.com
+2025-09-06T12:30:54.843Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making GET request to https://hub-apse.browserstack.com
+2025-09-06T12:30:54.925Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making GET request to https://hub-aps.browserstack.com
+2025-09-06T12:30:55.607Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making GET request to https://hub-usw.browserstack.com
+2025-09-06T12:31:00.294Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  Added the event {
+  event_type: 'CBTSessionCreated',
+  test_run: {
+    uuid: 'b49dbd2c-4fd9-471c-a6f9-2075b6bf0d79',
+    integrations: { browserstack: [Object] }
+  }
+} to 35354:0
+2025-09-06T12:31:01.374Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  Processing batch event [
+  {
+    event_type: 'CBTSessionCreated',
+    test_run: {
+      uuid: 'b49dbd2c-4fd9-471c-a6f9-2075b6bf0d79',
+      integrations: [Object]
+    }
+  }
+] to 35354:0
+2025-09-06T12:31:01.375Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:31:05.535Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  Added the event {
+  event_type: 'CBTSessionCreated',
+  test_run: {
+    uuid: 'b49dbd2c-4fd9-471c-a6f9-2075b6bf0d79',
+    integrations: { browserstack: [Object] }
+  }
+} to 35354:0
+2025-09-06T12:31:05.833Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  Added the event {
+  event_type: 'CBTSessionCreated',
+  test_run: {
+    uuid: 'b49dbd2c-4fd9-471c-a6f9-2075b6bf0d79',
+    integrations: { browserstack: [Object] }
+  }
+} to 35354:0
+2025-09-06T12:31:07.375Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  Processing batch event [
+  {
+    event_type: 'CBTSessionCreated',
+    test_run: {
+      uuid: 'b49dbd2c-4fd9-471c-a6f9-2075b6bf0d79',
+      integrations: [Object]
+    }
+  },
+  {
+    event_type: 'CBTSessionCreated',
+    test_run: {
+      uuid: 'b49dbd2c-4fd9-471c-a6f9-2075b6bf0d79',
+      integrations: [Object]
+    }
+  }
+] to 35354:0
+2025-09-06T12:31:07.376Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:31:12.980Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  Added the event {
+  event_type: 'CBTSessionCreated',
+  test_run: {
+    uuid: 'b49dbd2c-4fd9-471c-a6f9-2075b6bf0d79',
+    integrations: { browserstack: [Object] }
+  }
+} to 35354:0
+2025-09-06T12:31:13.379Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  Processing batch event [
+  {
+    event_type: 'CBTSessionCreated',
+    test_run: {
+      uuid: 'b49dbd2c-4fd9-471c-a6f9-2075b6bf0d79',
+      integrations: [Object]
+    }
+  }
+] to 35354:0
+2025-09-06T12:31:13.379Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:31:23.110Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  Added the event {
+  event_type: 'CBTSessionCreated',
+  test_run: {
+    uuid: 'b49dbd2c-4fd9-471c-a6f9-2075b6bf0d79',
+    integrations: { browserstack: [Object] }
+  }
+} to 35354:0
+2025-09-06T12:31:23.384Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  Processing batch event [
+  {
+    event_type: 'CBTSessionCreated',
+    test_run: {
+      uuid: 'b49dbd2c-4fd9-471c-a6f9-2075b6bf0d79',
+      integrations: [Object]
+    }
+  }
+] to 35354:0
+2025-09-06T12:31:23.385Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:31:23.755Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  Added the event {
+  event_type: 'CBTSessionCreated',
+  test_run: {
+    uuid: 'b49dbd2c-4fd9-471c-a6f9-2075b6bf0d79',
+    integrations: { browserstack: [Object] }
+  }
+} to 35354:0
+2025-09-06T12:31:25.385Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  Processing batch event [
+  {
+    event_type: 'CBTSessionCreated',
+    test_run: {
+      uuid: 'b49dbd2c-4fd9-471c-a6f9-2075b6bf0d79',
+      integrations: [Object]
+    }
+  }
+] to 35354:0
+2025-09-06T12:31:25.385Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:31:39.811Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:31:40.512Z CLI error [testhub:module]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [collectBuildData] Exception in collecting build data for build UUID tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj: {"message":"Build data collection started"}
+2025-09-06T12:31:40.512Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making PUT request to https://collector-observability.browserstack.com
+2025-09-06T12:31:41.205Z CLI info [testhub:module]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  stopBuild: tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj request={"finished_at":"2025-09-06T12:31:39.811Z","finished_metadata":[],"custom_metadata":{}} response={"data":""}
+2025-09-06T12:31:41.206Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making POST request to https://api.browserstack.com
+2025-09-06T12:31:41.207Z CLI info [TEST REPORTING AND ANALYTICS:module]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  Visit https://automation.browserstack.com/builds/tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj to view build report, insights, and many more debugging information all at one place!
+2025-09-06T12:31:41.926Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making GET request to https://api.browserstack.com
+2025-09-06T12:31:42.273Z CLI info  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  [PRODUCTION] Making POST request to https://eds.browserstack.com
+2025-09-06T12:31:48.217Z CLI info [main]  [mikena_nwhv0R]  [tqdpku4dgwzslkh6wmqddclg4ubhhocvenc5gnaj]  [95e83543-520e-4374-b268-5d193004be17]  Received graceful signal termination, performing cleanup
+2025-09-06T12:34:54.352Z CLI info     Config : {"userName":"mikena_nwhv0R","accessKey":"kfJkTqofqbvXbkSiq5KD","projectName":"demo Project","buildName":"build_${BUILD_NUMBER:-local}","buildIdentifier":"#${BUILD_NUMBER}","platforms":[{"os":"OS X","osVersion":"Big Sur","browserName":"Chrome","browserVersion":"latest"},{"os":"Windows","osVersion":10,"browserName":"Edge","browserVersion":"latest"},{"deviceName":"Samsung Galaxy S22 Ultra","browserName":"chrome","osVersion":12}],"parallelsPerPlatform":1,"browserstackLocal":false,"debug":false,"networkLogs":false,"consoleLogs":"errors","testReporting":true}
+2025-09-06T12:34:54.365Z CLI info [testhub:module]  [mikena_nwhv0R]   [a87d4158-2e7b-45cb-a524-509e165950d8]  Starting testhub from 43035:0
+2025-09-06T12:34:54.366Z CLI info [testhub:module]  [mikena_nwhv0R]   [a87d4158-2e7b-45cb-a524-509e165950d8]  startBuild: payload=
+
+{"started_at":"2025-09-06T12:34:54.366Z","host_info":{"hostname":"Michaels-MacBook-Pro-2.local","platform":"darwin","type":"Darwin","version":"Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000","arch":"arm64"},"ci_info":{"build_number":null},"version_control":{"name":"git","sha":"4ec9bb9f0235b87b0af3d6d78223f0b9f97d46e6","short_sha":"4ec9bb9f02","branch":"testbrowserstack","tag":null,"committer":"mnashed13 <44353375+mnashed13@users.noreply.github.com>","committer_date":"2025-09-06T12:23:15.000Z","author":"mnashed13 <44353375+mnashed13@users.noreply.github.com>","author_date":"2025-09-06T12:23:15.000Z","commit_message":"Update browserstack-ui-tests.yml","root":"/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework","common_git_dir":"/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/.git","worktree_git_dir":"/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/.git","last_tag":null,"commits_since_last_tag":0,"remotes":[{"name":"origin","url":"https://github.com/mnashed13/Playwright-testing-framework.git"}]},"project_name":"demo Project","name":"build_${BUILD_NUMBER:-local}","build_identifier":"#3","build_run_identifier":null,"description":"","tags":[],"failed_tests_rerun":false,"accessibility":{"settings":{}},"framework_details":{"frameworkName":"Playwright","frameworkVersion":"1.50.1","sdkVersion":"1.42.3","cliVersion":"1.6.17","language":"javascript","testFramework":{"name":"Playwright","version":"1.50.1"}},"product_map":{"observability":true,"accessibility":null,"percy":false,"automate":true,"app_automate":false},"browserstackAutomation":true,"test_orchestration":{}}
+2025-09-06T12:34:54.366Z CLI info  [mikena_nwhv0R]   [a87d4158-2e7b-45cb-a524-509e165950d8]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:34:54.509Z CLI info [main]  [mikena_nwhv0R]   [a87d4158-2e7b-45cb-a524-509e165950d8]  Received graceful signal termination, performing cleanup
+2025-09-06T12:37:52.645Z CLI info     Config : {"userName":"mikena_nwhv0R","accessKey":"kfJkTqofqbvXbkSiq5KD","projectName":"demo Project","buildName":"build_${BUILD_NUMBER:-local}","buildIdentifier":"#${BUILD_NUMBER}","platforms":[{"os":"OS X","osVersion":"Big Sur","browserName":"Chrome","browserVersion":"latest"},{"os":"Windows","osVersion":10,"browserName":"Edge","browserVersion":"latest"},{"deviceName":"Samsung Galaxy S22 Ultra","browserName":"chrome","osVersion":12}],"parallelsPerPlatform":1,"browserstackLocal":false,"debug":false,"networkLogs":false,"consoleLogs":"errors","testReporting":true}
+2025-09-06T12:37:52.660Z CLI info [testhub:module]  [mikena_nwhv0R]   [20b0b98f-6f8a-4c77-8aea-e12cf7aec21e]  Starting testhub from 49947:0
+2025-09-06T12:37:52.661Z CLI info [testhub:module]  [mikena_nwhv0R]   [20b0b98f-6f8a-4c77-8aea-e12cf7aec21e]  startBuild: payload=
+
+{"started_at":"2025-09-06T12:37:52.661Z","host_info":{"hostname":"Michaels-MacBook-Pro-2.local","platform":"darwin","type":"Darwin","version":"Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000","arch":"arm64"},"ci_info":{"build_number":null},"version_control":{"name":"git","sha":"4ec9bb9f0235b87b0af3d6d78223f0b9f97d46e6","short_sha":"4ec9bb9f02","branch":"testbrowserstack","tag":null,"committer":"mnashed13 <44353375+mnashed13@users.noreply.github.com>","committer_date":"2025-09-06T12:23:15.000Z","author":"mnashed13 <44353375+mnashed13@users.noreply.github.com>","author_date":"2025-09-06T12:23:15.000Z","commit_message":"Update browserstack-ui-tests.yml","root":"/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework","common_git_dir":"/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/.git","worktree_git_dir":"/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/.git","last_tag":null,"commits_since_last_tag":0,"remotes":[{"name":"origin","url":"https://github.com/mnashed13/Playwright-testing-framework.git"}]},"project_name":"demo Project","name":"build_${BUILD_NUMBER:-local}","build_identifier":"#4","build_run_identifier":null,"description":"","tags":[],"failed_tests_rerun":false,"accessibility":{"settings":{}},"framework_details":{"frameworkName":"Playwright","frameworkVersion":"1.50.1","sdkVersion":"1.42.3","cliVersion":"1.6.17","language":"javascript","testFramework":{"name":"Playwright","version":"1.50.1"}},"product_map":{"observability":true,"accessibility":null,"percy":false,"automate":true,"app_automate":false},"browserstackAutomation":true,"test_orchestration":{}}
+2025-09-06T12:37:52.661Z CLI info  [mikena_nwhv0R]   [20b0b98f-6f8a-4c77-8aea-e12cf7aec21e]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:37:53.481Z CLI info [main]  [mikena_nwhv0R]   [20b0b98f-6f8a-4c77-8aea-e12cf7aec21e]  Received graceful signal termination, performing cleanup
+2025-09-06T12:38:05.697Z CLI info     Config : {"userName":"mikena_nwhv0R","accessKey":"kfJkTqofqbvXbkSiq5KD","projectName":"demo Project","buildName":"build_${BUILD_NUMBER:-local}","buildIdentifier":"#${BUILD_NUMBER}","platforms":[{"os":"OS X","osVersion":"Big Sur","browserName":"Chrome","browserVersion":"latest"},{"os":"Windows","osVersion":10,"browserName":"Edge","browserVersion":"latest"},{"deviceName":"Samsung Galaxy S22 Ultra","browserName":"chrome","osVersion":12}],"parallelsPerPlatform":1,"browserstackLocal":false,"debug":false,"networkLogs":false,"consoleLogs":"errors","testReporting":true}
+2025-09-06T12:38:05.712Z CLI info [testhub:module]  [mikena_nwhv0R]   [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Starting testhub from 50530:0
+2025-09-06T12:38:05.712Z CLI info [testhub:module]  [mikena_nwhv0R]   [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  startBuild: payload=
+
+{"started_at":"2025-09-06T12:38:05.712Z","host_info":{"hostname":"Michaels-MacBook-Pro-2.local","platform":"darwin","type":"Darwin","version":"Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:29 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T6000","arch":"arm64"},"ci_info":{"build_number":null},"version_control":{"name":"git","sha":"4ec9bb9f0235b87b0af3d6d78223f0b9f97d46e6","short_sha":"4ec9bb9f02","branch":"testbrowserstack","tag":null,"committer":"mnashed13 <44353375+mnashed13@users.noreply.github.com>","committer_date":"2025-09-06T12:23:15.000Z","author":"mnashed13 <44353375+mnashed13@users.noreply.github.com>","author_date":"2025-09-06T12:23:15.000Z","commit_message":"Update browserstack-ui-tests.yml","root":"/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework","common_git_dir":"/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/.git","worktree_git_dir":"/Users/michaelnashed/Desktop/Development/PlaywrightBaseProject/project-root/Playwright-testing-framework/.git","last_tag":null,"commits_since_last_tag":0,"remotes":[{"name":"origin","url":"https://github.com/mnashed13/Playwright-testing-framework.git"}]},"project_name":"demo Project","name":"build_${BUILD_NUMBER:-local}","build_identifier":"#5","build_run_identifier":null,"description":"","tags":[],"failed_tests_rerun":false,"accessibility":{"settings":{}},"framework_details":{"frameworkName":"Playwright","frameworkVersion":"1.50.1","sdkVersion":"1.42.3","cliVersion":"1.6.17","language":"javascript","testFramework":{"name":"Playwright","version":"1.50.1"}},"product_map":{"observability":true,"accessibility":null,"percy":false,"automate":true,"app_automate":false},"browserstackAutomation":true,"test_orchestration":{}}
+2025-09-06T12:38:05.712Z CLI info  [mikena_nwhv0R]   [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:38:06.707Z CLI info [testhub:module]  [mikena_nwhv0R]   [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  startBuild: response=d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc
+2025-09-06T12:38:06.709Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making POST request to https://api.browserstack.com
+2025-09-06T12:38:11.941Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making GET request to https://hub.browserstack.com
+2025-09-06T12:38:12.023Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making GET request to https://hub-apse.browserstack.com
+2025-09-06T12:38:12.100Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making GET request to https://hub-aps.browserstack.com
+2025-09-06T12:38:12.828Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making GET request to https://hub-usw.browserstack.com
+2025-09-06T12:38:18.530Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Added the event {
+  event_type: 'CBTSessionCreated',
+  test_run: {
+    uuid: '58bf99db-326f-4307-8fba-fec90628e6b4',
+    integrations: { browserstack: [Object] }
+  }
+} to 50530:0
+2025-09-06T12:38:18.659Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Added the event {
+  event_type: 'CBTSessionCreated',
+  test_run: {
+    uuid: '58bf99db-326f-4307-8fba-fec90628e6b4',
+    integrations: { browserstack: [Object] }
+  }
+} to 50530:0
+2025-09-06T12:38:18.715Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Processing batch event [
+  {
+    event_type: 'CBTSessionCreated',
+    test_run: {
+      uuid: '58bf99db-326f-4307-8fba-fec90628e6b4',
+      integrations: [Object]
+    }
+  },
+  {
+    event_type: 'CBTSessionCreated',
+    test_run: {
+      uuid: '58bf99db-326f-4307-8fba-fec90628e6b4',
+      integrations: [Object]
+    }
+  }
+] to 50530:0
+2025-09-06T12:38:18.715Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:38:22.248Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Added the event {
+  event_type: 'CBTSessionCreated',
+  test_run: {
+    uuid: '58bf99db-326f-4307-8fba-fec90628e6b4',
+    integrations: { browserstack: [Object] }
+  }
+} to 50530:0
+2025-09-06T12:38:22.720Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Processing batch event [
+  {
+    event_type: 'CBTSessionCreated',
+    test_run: {
+      uuid: '58bf99db-326f-4307-8fba-fec90628e6b4',
+      integrations: [Object]
+    }
+  }
+] to 50530:0
+2025-09-06T12:38:22.721Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:38:31.345Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Added the event {
+  event_type: 'CBTSessionCreated',
+  test_run: {
+    uuid: '58bf99db-326f-4307-8fba-fec90628e6b4',
+    integrations: { browserstack: [Object] }
+  }
+} to 50530:0
+2025-09-06T12:38:32.730Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Processing batch event [
+  {
+    event_type: 'CBTSessionCreated',
+    test_run: {
+      uuid: '58bf99db-326f-4307-8fba-fec90628e6b4',
+      integrations: [Object]
+    }
+  }
+] to 50530:0
+2025-09-06T12:38:32.733Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:38:34.322Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Added the event {
+  event_type: 'CBTSessionCreated',
+  test_run: {
+    uuid: '58bf99db-326f-4307-8fba-fec90628e6b4',
+    integrations: { browserstack: [Object] }
+  }
+} to 50530:0
+2025-09-06T12:38:34.730Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Processing batch event [
+  {
+    event_type: 'CBTSessionCreated',
+    test_run: {
+      uuid: '58bf99db-326f-4307-8fba-fec90628e6b4',
+      integrations: [Object]
+    }
+  }
+] to 50530:0
+2025-09-06T12:38:34.730Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:38:39.817Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Added the event {
+  event_type: 'CBTSessionCreated',
+  test_run: {
+    uuid: '58bf99db-326f-4307-8fba-fec90628e6b4',
+    integrations: { browserstack: [Object] }
+  }
+} to 50530:0
+2025-09-06T12:38:40.736Z CLI info [testhub:request-queue-handler]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Processing batch event [
+  {
+    event_type: 'CBTSessionCreated',
+    test_run: {
+      uuid: '58bf99db-326f-4307-8fba-fec90628e6b4',
+      integrations: [Object]
+    }
+  }
+] to 50530:0
+2025-09-06T12:38:40.737Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:38:55.817Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making POST request to https://collector-observability.browserstack.com
+2025-09-06T12:38:56.516Z CLI error [testhub:module]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [collectBuildData] Exception in collecting build data for build UUID d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc: {"message":"Build data collection started"}
+2025-09-06T12:38:56.517Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making PUT request to https://collector-observability.browserstack.com
+2025-09-06T12:38:57.234Z CLI info [testhub:module]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  stopBuild: d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc request={"finished_at":"2025-09-06T12:38:55.816Z","finished_metadata":[],"custom_metadata":{}} response={"data":""}
+2025-09-06T12:38:57.235Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making POST request to https://api.browserstack.com
+2025-09-06T12:38:57.238Z CLI info [TEST REPORTING AND ANALYTICS:module]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Visit https://automation.browserstack.com/builds/d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc to view build report, insights, and many more debugging information all at one place!
+2025-09-06T12:38:57.602Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making GET request to https://api.browserstack.com
+2025-09-06T12:38:57.997Z CLI info  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  [PRODUCTION] Making POST request to https://eds.browserstack.com
+2025-09-06T12:39:03.930Z CLI info [main]  [mikena_nwhv0R]  [d5psz5dtuzdzmaj5uifl4uzuhs3bo1xn7tsphojc]  [9d79ce3c-fff3-4f74-b58c-7fc6ac0924c1]  Received graceful signal termination, performing cleanup
