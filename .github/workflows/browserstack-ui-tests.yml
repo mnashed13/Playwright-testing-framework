@@ -45,7 +45,6 @@ jobs:
           BROWSERSTACK_DEBUG: true
           BROWSERSTACK_CONSOLE_LOGS: true
           BROWSERSTACK_NETWORK_LOGS: true
-          BASE_URL: ${{ secrets.BASE_URL || 'https://www.google.com' }}
           USERNAME: ${{ secrets.TEST_USERNAME }}
           PASSWORD: ${{ secrets.TEST_PASSWORD }}
         run: |
