@@ -45,10 +45,9 @@ jobs:
           BROWSERSTACK_DEBUG: true
           BROWSERSTACK_CONSOLE_LOGS: true
           BROWSERSTACK_NETWORK_LOGS: true
-          USERNAME: ${{ secrets.TEST_USERNAME }}
-          PASSWORD: ${{ secrets.TEST_PASSWORD }}
+
         run: |
-          npx playwright test --config=playwright.browserstack.config.ts --project=browserstack-chrome
+          npm run test:browserstack
 
       - name: Upload BrowserStack Test Results
         if: always()
