@@ -47,7 +47,7 @@ jobs:
           BROWSERSTACK_NETWORK_LOGS: true
 
         run: |
-          npm run test:browserstack
+          npx playwright test --config=playwright.browserstack.config.ts --project=browserstack-chrome
 
       - name: Upload BrowserStack Test Results
         if: always()
