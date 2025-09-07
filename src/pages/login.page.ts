@@ -23,27 +23,27 @@ export class LoginPage extends BasePage {
 
 	async clickSignIn() {
 		await this.signInButton().click();
-		await this.waitForPageLoad();
+		// await this.waitForPageLoad();
 	}
 
 	async performSearch(searchTerm: string) {
 		await this.searchBox().fill(searchTerm);
 		await this.searchButton().click();
-		await this.waitForPageLoad();
+		// await this.waitForPageLoad();
 	}
 
 	async navigateToImages() {
 		await this.imagesLink().click();
-		await this.waitForPageLoad();
+		// await this.waitForPageLoad();
 	}
 
 	async navigateToGmail() {
 		await this.gmailLink().click();
-		await this.waitForPageLoad();
+		// await this.waitForPageLoad();
 	}
 
 	async navigateToAdvancedSearch() {
 		await this.advancedSearchLink().click();
-		await this.waitForPageLoad();
+		// await this.waitForPageLoad();
 	}
 }
