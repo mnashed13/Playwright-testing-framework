@@ -8,10 +8,18 @@ Given('I am on the login page', async function (this: World) {
 	await loginPage.navigate(process.env.BASE_URL);
 });
 
-When('I login with valid credentials', async function (this: World) {});
+When('I login with valid credentials', async function (this: World) {
+	console.log('I login with valid credentials');
+});
 
-When('I login with invalid credentials', async function (this: World) {});
+When('I login with invalid credentials', async function (this: World) {
+	console.log('I login with invalid credentials');
+});
 
-Then('I should be logged in successfully', async function (this: World) {});
+Then('I should be logged in successfully', async function (this: World) {
+	console.log('I should be logged in successfully');
+});
 
-Then('I should see an error message', async function (this: World) {});
+Then('I should see an error message', async function (this: World) {
+	console.log('I should see an error message');
+});
