@@ -40,14 +40,16 @@ jobs:
           BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
           BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           BROWSERSTACK_PROJECT_NAME: Playwright Testing Framework
-          BROWSERSTACK_BUILD_NAME: Playwright Build-${{ github.run_number }}-${{ github.sha }}
+          BROWSERSTACK_BUILD_NAME: build-${{ github.run_number }}-${{ github.sha }}
           BROWSERSTACK_SESSION_NAME: browserstack_${{ github.workflow }}
           BROWSERSTACK_DEBUG: true
           BROWSERSTACK_CONSOLE_LOGS: true
           BROWSERSTACK_NETWORK_LOGS: true
-
+          BASE_URL: ${{ secrets.BASE_URL || 'https://www.google.com' }}
+          USERNAME: ${{ secrets.TEST_USERNAME }}
+          PASSWORD: ${{ secrets.TEST_PASSWORD }}
         run: |
-          npm run test:browserstack-browserstack
+          npm run run-browserstack-working
 
       - name: Upload BrowserStack Test Results
         if: always()
