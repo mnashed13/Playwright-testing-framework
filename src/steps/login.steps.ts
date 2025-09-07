@@ -5,7 +5,7 @@ import { World } from '../support/world';
 
 Given('I am on the login page', async function (this: World) {
 	const loginPage = new LoginPage(this.page);
-	await loginPage.navigate(process.env.BASE_URL);
+	await loginPage.navigate(); // Navigate to base URL without path parameter
 });
 
 When('I login with valid credentials', async function (this: World) {
