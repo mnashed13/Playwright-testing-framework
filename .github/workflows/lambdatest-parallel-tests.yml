@@ -1,0 +1,275 @@
+name: LambdaTest Parallel Tests
+
+on:
+  schedule:
+    # Run parallel tests daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      test_suite:
+        description: 'Test suite to run'
+        required: true
+        default: 'regression'
+        type: choice
+        options:
+          - smoke
+          - regression
+          - full
+      parallel_jobs:
+        description: 'Number of parallel jobs'
+        required: true
+        default: '5'
+        type: string
+
+jobs:
+  parallel-browser-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Chrome on different platforms
+          - browser: chrome
+            platform: 'Windows 10'
+            version: latest
+          - browser: chrome
+            platform: 'Windows 11'
+            version: latest
+          - browser: chrome
+            platform: 'macOS Monterey'
+            version: latest
+
+          # Firefox on different platforms
+          - browser: firefox
+            platform: 'Windows 10'
+            version: latest
+          - browser: firefox
+            platform: 'macOS Monterey'
+            version: latest
+
+          # Edge on Windows
+          - browser: edge
+            platform: 'Windows 10'
+            version: latest
+          - browser: edge
+            platform: 'Windows 11'
+            version: latest
+
+          # Safari on macOS
+          - browser: safari
+            platform: 'macOS Monterey'
+            version: latest
+          - browser: safari
+            platform: 'macOS Big Sur'
+            version: latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run pretest
+
+      - name: Create directories
+        run: |
+          mkdir -p screenshots
+          mkdir -p test-results
+
+      - name: Run LambdaTest Parallel Tests
+        env:
+          LT_USERNAME: ${{ secrets.LT_USERNAME }}
+          LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+          LT_BUILD_NAME: 'Parallel Tests Build #${{ github.run_number }} - ${{ matrix.browser }}'
+          LT_TEST_NAME: 'Parallel ${{ matrix.browser }} on ${{ matrix.platform }}'
+          LT_BROWSER: ${{ matrix.browser }}
+          LT_PLATFORM: ${{ matrix.platform }}
+          LT_BROWSER_VERSION: ${{ matrix.version }}
+          LT_PARALLEL: ${{ github.event.inputs.parallel_jobs || '5' }}
+          BASE_URL: ${{ vars.BASE_URL || 'https://example.com' }}
+          PARALLEL_TESTS: ${{ github.event.inputs.parallel_jobs || '5' }}
+        run: |
+          case "${{ github.event.inputs.test_suite || 'regression' }}" in
+            smoke)
+              npm run test:lambdatest:smoke
+              ;;
+            regression)
+              npm run test:lambdatest:regression
+              ;;
+            full)
+              npm run test:lambdatest:parallel
+              ;;
+            *)
+              npm run test:lambdatest:regression
+              ;;
+          esac
+
+      - name: Upload test artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: parallel-test-results-${{ matrix.browser }}-${{ matrix.platform }}-${{ matrix.version }}
+          path: |
+            test-results/
+            screenshots/
+          retention-days: 7
+
+      - name: Generate Test Report
+        if: always()
+        run: |
+          echo "## 🚀 Parallel Test Results - ${{ matrix.browser }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Platform:** ${{ matrix.platform }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** ${{ matrix.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Build:** #${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f "test-results/cucumber-report.json" ]; then
+            node -e "
+              const fs = require('fs');
+              const report = JSON.parse(fs.readFileSync('test-results/cucumber-report.json', 'utf8'));
+              let passed = 0, failed = 0, skipped = 0, duration = 0;
+              
+              report.forEach(feature => {
+                feature.elements?.forEach(scenario => {
+                  const status = scenario.steps?.every(step => step.result?.status === 'passed') ? 'passed' : 
+                                scenario.steps?.some(step => step.result?.status === 'failed') ? 'failed' : 'skipped';
+                  if (status === 'passed') passed++;
+                  else if (status === 'failed') failed++;
+                  else skipped++;
+                  
+                  scenario.steps?.forEach(step => {
+                    if (step.result?.duration) {
+                      duration += step.result.duration / 1000000000; // Convert nanoseconds to seconds
+                    }
+                  });
+                });
+              });
+              
+              console.log('| Metric | Value |');
+              console.log('|--------|-------|');
+              console.log('| ✅ Passed | ' + passed + ' |');
+              console.log('| ❌ Failed | ' + failed + ' |');
+              console.log('| ⏭️ Skipped | ' + skipped + ' |');
+              console.log('| ⏱️ Duration | ' + Math.round(duration) + 's |');
+            " >> $GITHUB_STEP_SUMMARY
+          fi
+
+  # Aggregate and report results
+  aggregate-results:
+    needs: parallel-browser-tests
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Generate Consolidated Report
+        run: |
+          echo "# 🎯 LambdaTest Parallel Tests - Complete Results" >> $GITHUB_STEP_SUMMARY
+          echo "**Test Suite:** ${{ github.event.inputs.test_suite || 'regression' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Parallel Jobs:** ${{ github.event.inputs.parallel_jobs || '5' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Build:** #${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          echo "## 📊 Results by Browser/Platform:" >> $GITHUB_STEP_SUMMARY
+          echo "| Browser | Platform | Version | Status | Passed | Failed | Skipped | Duration |" >> $GITHUB_STEP_SUMMARY
+          echo "|---------|----------|---------|--------|---------|---------|---------|----------|" >> $GITHUB_STEP_SUMMARY
+
+          total_passed=0
+          total_failed=0
+          total_skipped=0
+          total_duration=0
+
+          for dir in artifacts/parallel-test-results-*; do
+            if [ -d "$dir" ] && [ -f "$dir/test-results/cucumber-report.json" ]; then
+              # Extract browser, platform, version from directory name
+              basename_dir=$(basename "$dir")
+              browser=$(echo "$basename_dir" | sed 's/parallel-test-results-//' | cut -d'-' -f1)
+              platform_version=$(echo "$basename_dir" | sed 's/parallel-test-results-//' | cut -d'-' -f2-)
+              
+              # Parse the JSON report
+              result=$(node -e "
+                const fs = require('fs');
+                const report = JSON.parse(fs.readFileSync('$dir/test-results/cucumber-report.json', 'utf8'));
+                let passed = 0, failed = 0, skipped = 0, duration = 0;
+                
+                report.forEach(feature => {
+                  feature.elements?.forEach(scenario => {
+                    const status = scenario.steps?.every(step => step.result?.status === 'passed') ? 'passed' : 
+                                  scenario.steps?.some(step => step.result?.status === 'failed') ? 'failed' : 'skipped';
+                    if (status === 'passed') passed++;
+                    else if (status === 'failed') failed++;
+                    else skipped++;
+                    
+                    scenario.steps?.forEach(step => {
+                      if (step.result?.duration) {
+                        duration += step.result.duration / 1000000000;
+                      }
+                    });
+                  });
+                });
+                
+                const status = failed > 0 ? '❌ FAILED' : passed > 0 ? '✅ PASSED' : '⏭️ SKIPPED';
+                console.log(browser + '|' + platform_version + '|latest|' + status + '|' + passed + '|' + failed + '|' + skipped + '|' + Math.round(duration) + 's');
+              ")
+              
+              echo "| $result |" | tr '|' ' | ' >> $GITHUB_STEP_SUMMARY
+              
+              # Add to totals
+              passed=$(echo "$result" | cut -d'|' -f5)
+              failed=$(echo "$result" | cut -d'|' -f6)
+              skipped=$(echo "$result" | cut -d'|' -f7)
+              duration=$(echo "$result" | cut -d'|' -f8 | sed 's/s//')
+              
+              total_passed=$((total_passed + passed))
+              total_failed=$((total_failed + failed))
+              total_skipped=$((total_skipped + skipped))
+              total_duration=$((total_duration + duration))
+            fi
+          done
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 📈 Overall Summary:" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Total |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| ✅ Total Passed | $total_passed |" >> $GITHUB_STEP_SUMMARY
+          echo "| ❌ Total Failed | $total_failed |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⏭️ Total Skipped | $total_skipped |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⏱️ Total Duration | ${total_duration}s |" >> $GITHUB_STEP_SUMMARY
+
+          # Determine overall status
+          if [ $total_failed -gt 0 ]; then
+            echo "| 🎯 Overall Status | ❌ FAILED |" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          elif [ $total_passed -gt 0 ]; then
+            echo "| 🎯 Overall Status | ✅ PASSED |" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "| 🎯 Overall Status | ⏭️ NO TESTS RUN |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Create LambdaTest Dashboard Link
+        run: |
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔗 LambdaTest Dashboard" >> $GITHUB_STEP_SUMMARY
+          echo "View detailed test execution, screenshots, and videos on the [LambdaTest Dashboard](https://automation.lambdatest.com/build)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Build Name:** Parallel Tests Build #${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY

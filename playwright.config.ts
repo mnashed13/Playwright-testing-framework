@@ -1,6 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 import path from 'path';
+import {
+	lambdaTestBrowsers,
+	isLambdaTest,
+	getLambdaTestConnectOptions,
+	lambdaTestCapabilities,
+} from './lambdatest.config';
 
 // Read from .env file
 dotenv.config({ path: path.resolve(__dirname, '.env') });
@@ -17,19 +23,32 @@ export default defineConfig({
 		baseURL: process.env.BASE_URL,
 		trace: 'on-first-retry',
 		screenshot: 'only-on-failure',
+		// Add LambdaTest specific configurations
+		...(isLambdaTest() && {
+			connectOptions: getLambdaTestConnectOptions(lambdaTestCapabilities),
+		}),
 	},
-	projects: [
-		{
-			name: 'chromium',
-			use: { ...devices['Desktop Chrome'] },
-		},
-		{
-			name: 'firefox',
-			use: { ...devices['Desktop Firefox'] },
-		},
-		{
-			name: 'webkit',
-			use: { ...devices['Desktop Safari'] },
-		},
-	],
+	projects: isLambdaTest()
+		? lambdaTestBrowsers.map((browser) => ({
+				...browser,
+				use: {
+					...browser.use,
+					// Remove conflicting properties for Playwright
+					browserName: undefined as any,
+				},
+		  }))
+		: [
+				{
+					name: 'chromium',
+					use: { ...devices['Desktop Chrome'] },
+				},
+				{
+					name: 'firefox',
+					use: { ...devices['Desktop Firefox'] },
+				},
+				{
+					name: 'webkit',
+					use: { ...devices['Desktop Safari'] },
+				},
+		  ],
 });

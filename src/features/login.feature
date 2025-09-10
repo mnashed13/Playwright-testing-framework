@@ -1,11 +1,11 @@
-Feature: User Authentication
+Feature: Google Search
 
-  Scenario: Successful login with valid credentials
-    Given I am on the login page
-    When I login with valid credentials
-    Then I should be logged in successfully
+  Scenario: Search for Wikipedia on Google
+    Given I am on Google homepage
+    When I search for "wikipedia"
+    Then I should see search results
 
-  Scenario: Failed login with invalid credentials
-    Given I am on the login page
-    When I login with invalid credentials
-    Then I should see an error message 
+  Scenario: Verify Google search functionality
+    Given I am on Google homepage
+    When I search for "playwright testing"
+    Then I should see search results containing "playwright" 

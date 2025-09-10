@@ -5,8 +5,25 @@
 # Running and Using Playwright with Cucumber Base Repo
 
 [![Echo API Tests](https://github.com/mnashed13/Playwright-testing-framework/actions/workflows/api-tests.yml/badge.svg)](https://github.com/mnashed13/Playwright-testing-framework/actions/workflows/api-tests.yml)
+[![LambdaTest UI Tests](https://github.com/mnashed13/Playwright-testing-framework/actions/workflows/lambdatest-ui-tests.yml/badge.svg)](https://github.com/mnashed13/Playwright-testing-framework/actions/workflows/lambdatest-ui-tests.yml)
 
-This guide explains how to run and use Playwright with Cucumber for automated testing of web applications.
+This guide explains how to run and use Playwright with Cucumber for automated testing of web applications. The framework now includes **LambdaTest integration** for cross-browser testing in the cloud.
+
+## 🚀 Quick Start with LambdaTest
+
+For detailed LambdaTest setup instructions, see [LAMBDATEST_SETUP.md](./LAMBDATEST_SETUP.md).
+
+### LambdaTest Commands
+
+```bash
+# Run tests on LambdaTest cloud
+npm run test:lambdatest:smoke      # Smoke tests
+npm run test:lambdatest:regression # Regression tests
+npm run test:lambdatest:parallel   # Parallel execution (5 sessions)
+
+# Run with custom tags
+npm run test:lambdatest -- --tags "@critical"
+```
 
 **Prerequisites**
 
@@ -140,11 +157,26 @@ graph TD
 
 ### Command Line
 
-- `npm test` - Run UI tests
+#### Local Tests
+
+- `npm test` - Run UI tests locally
+- `npm run test:headed` - Run UI tests with browser visible
 - `npm run test:api` - Run API tests
 - `npm run test:all` - Run all tests
 - `npm run test:api:smoke` - Run API smoke tests
 - `npm run test:echo` - Run Echo API tests specifically
+
+#### LambdaTest Cloud Tests
+
+- `npm run test:lambdatest` - Run UI tests on LambdaTest
+- `npm run test:lambdatest:smoke` - Run smoke tests on LambdaTest
+- `npm run test:lambdatest:regression` - Run regression tests on LambdaTest
+- `npm run test:lambdatest:parallel` - Run parallel tests (5 sessions)
+
+#### Tunnel Management
+
+- `npm run tunnel:start` - Start LambdaTest tunnel for local testing
+- `npm run tunnel:stop` - Stop LambdaTest tunnel
 
 ### VS Code Debugging
 

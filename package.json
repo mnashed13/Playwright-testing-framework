@@ -13,6 +13,12 @@
 		"test:api:crud": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags '@get or @post or @put'",
 		"test:api:not-smoke": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags 'not @smoke'",
 		"test:echo": "cucumber-js api-tests/features/echo-api.feature --format json:reports/cucumber-report.json --format html:reports/cucumber-report.html",
+		"test:lambdatest": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile lambdatest",
+		"test:lambdatest:smoke": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile lambdatest --tags @smoke",
+		"test:lambdatest:regression": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile lambdatest --tags @regression",
+		"test:lambdatest:parallel": "cross-env PARALLEL_TESTS=5 NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile lambdatest",
+		"tunnel:start": "ts-node scripts/lambdatest-tunnel.ts start",
+		"tunnel:stop": "ts-node scripts/lambdatest-tunnel.ts stop",
 		"release": "semantic-release"
 	},
 	"dependencies": {

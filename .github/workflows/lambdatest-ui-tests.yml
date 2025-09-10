@@ -1,0 +1,246 @@
+name: LambdaTest UI Tests
+
+on:
+  push:
+    branches: [main, develop, lambda-test]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run tests against'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+      browser:
+        description: 'Browser to run tests on'
+        required: true
+        default: 'chrome'
+        type: choice
+        options:
+          - chrome
+          - firefox
+          - edge
+          - safari
+      platform:
+        description: 'Platform to run tests on'
+        required: true
+        default: 'Windows 10'
+        type: choice
+        options:
+          - Windows 10
+          - Windows 11
+          - macOS Monterey
+          - macOS Big Sur
+      tags:
+        description: 'Test tags to run (e.g., @smoke, @regression)'
+        required: false
+        default: '@smoke'
+
+jobs:
+  lambdatest-ui-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    strategy:
+      fail-fast: false
+      matrix:
+        browser:
+          - ${{ github.event.inputs.browser || 'chrome' }}
+        platform:
+          - ${{ github.event.inputs.platform || 'Windows 10' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run pretest
+
+      - name: Create screenshots directory
+        run: mkdir -p screenshots
+
+      - name: Run LambdaTest UI Tests
+        env:
+          LT_USERNAME: ${{ secrets.LT_USERNAME }}
+          LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+          LT_BUILD_NAME: 'GitHub Actions Build #${{ github.run_number }} - UI Tests'
+          LT_TEST_NAME: 'Playwright Cucumber Tests'
+          LT_BROWSER: ${{ matrix.browser }}
+          LT_PLATFORM: ${{ matrix.platform }}
+          LT_BROWSER_VERSION: 'latest'
+          LT_PARALLEL: '3'
+          BASE_URL: ${{ vars.BASE_URL || 'https://example.com' }}
+          ENVIRONMENT: ${{ github.event.inputs.environment || 'staging' }}
+        run: |
+          if [ -n "${{ github.event.inputs.tags }}" ]; then
+            npm run test:lambdatest -- --tags "${{ github.event.inputs.tags }}"
+          else
+            npm run test:lambdatest:smoke
+          fi
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lambdatest-test-results-${{ matrix.browser }}-${{ matrix.platform }}
+          path: |
+            test-results/
+            screenshots/
+          retention-days: 30
+
+      - name: Upload Cucumber HTML Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cucumber-html-report-${{ matrix.browser }}-${{ matrix.platform }}
+          path: test-results/cucumber-report.html
+          retention-days: 30
+
+      - name: Publish Test Results to Summary
+        if: always()
+        run: |
+          if [ -f "test-results/cucumber-report.json" ]; then
+            echo "## 🧪 Test Results Summary" >> $GITHUB_STEP_SUMMARY
+            echo "**Browser:** ${{ matrix.browser }}" >> $GITHUB_STEP_SUMMARY
+            echo "**Platform:** ${{ matrix.platform }}" >> $GITHUB_STEP_SUMMARY
+            echo "**Build:** #${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            # Extract test summary from JSON report
+            node -e "
+              const fs = require('fs');
+              const report = JSON.parse(fs.readFileSync('test-results/cucumber-report.json', 'utf8'));
+              let passed = 0, failed = 0, skipped = 0;
+              
+              report.forEach(feature => {
+                feature.elements?.forEach(scenario => {
+                  const status = scenario.steps?.every(step => step.result?.status === 'passed') ? 'passed' : 
+                                scenario.steps?.some(step => step.result?.status === 'failed') ? 'failed' : 'skipped';
+                  if (status === 'passed') passed++;
+                  else if (status === 'failed') failed++;
+                  else skipped++;
+                });
+              });
+              
+              console.log('| Status | Count |');
+              console.log('|--------|-------|');
+              console.log('| ✅ Passed | ' + passed + ' |');
+              console.log('| ❌ Failed | ' + failed + ' |');
+              console.log('| ⏭️ Skipped | ' + skipped + ' |');
+            " >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Comment PR with Test Results
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let comment = '## 🧪 LambdaTest UI Test Results\n\n';
+            comment += `**Browser:** ${{ matrix.browser }}\n`;
+            comment += `**Platform:** ${{ matrix.platform }}\n`;
+            comment += `**Build:** #${{ github.run_number }}\n\n`;
+
+            if (fs.existsSync('test-results/cucumber-report.json')) {
+              const report = JSON.parse(fs.readFileSync('test-results/cucumber-report.json', 'utf8'));
+              let passed = 0, failed = 0, skipped = 0;
+              
+              report.forEach(feature => {
+                feature.elements?.forEach(scenario => {
+                  const status = scenario.steps?.every(step => step.result?.status === 'passed') ? 'passed' : 
+                                scenario.steps?.some(step => step.result?.status === 'failed') ? 'failed' : 'skipped';
+                  if (status === 'passed') passed++;
+                  else if (status === 'failed') failed++;
+                  else skipped++;
+                });
+              });
+              
+              comment += '| Status | Count |\n';
+              comment += '|-----------|-------|\n';
+              comment += `| ✅ Passed | ${passed} |\n`;
+              comment += `| ❌ Failed | ${failed} |\n`;
+              comment += `| ⏭️ Skipped | ${skipped} |\n\n`;
+              
+              if (failed > 0) {
+                comment += '❌ Some tests failed. Check the [detailed report](' + 
+                           `${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}` + 
+                           ') for more information.\n';
+              } else if (passed > 0) {
+                comment += '✅ All tests passed successfully!\n';
+              }
+            } else {
+              comment += '⚠️ No test results found.\n';
+            }
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+  # Job to aggregate results from all browser/platform combinations
+  test-results-summary:
+    needs: lambdatest-ui-tests
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create consolidated test summary
+        run: |
+          echo "## 🎯 LambdaTest UI Tests - Complete Results" >> $GITHUB_STEP_SUMMARY
+          echo "**Build:** #${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          total_passed=0
+          total_failed=0
+          total_skipped=0
+
+          echo "### Results by Browser/Platform:" >> $GITHUB_STEP_SUMMARY
+          echo "| Browser | Platform | Passed | Failed | Skipped |" >> $GITHUB_STEP_SUMMARY
+          echo "|---------|----------|---------|---------|---------|" >> $GITHUB_STEP_SUMMARY
+
+          for dir in artifacts/lambdatest-test-results-*; do
+            if [ -d "$dir" ] && [ -f "$dir/test-results/cucumber-report.json" ]; then
+              browser_platform=$(basename "$dir" | sed 's/lambdatest-test-results-//')
+              browser=$(echo "$browser_platform" | cut -d'-' -f1)
+              platform=$(echo "$browser_platform" | cut -d'-' -f2- | tr '-' ' ')
+              
+              node -e "
+                const fs = require('fs');
+                const report = JSON.parse(fs.readFileSync('$dir/test-results/cucumber-report.json', 'utf8'));
+                let passed = 0, failed = 0, skipped = 0;
+                
+                report.forEach(feature => {
+                  feature.elements?.forEach(scenario => {
+                    const status = scenario.steps?.every(step => step.result?.status === 'passed') ? 'passed' : 
+                                  scenario.steps?.some(step => step.result?.status === 'failed') ? 'failed' : 'skipped';
+                    if (status === 'passed') passed++;
+                    else if (status === 'failed') failed++;
+                    else skipped++;
+                  });
+                });
+                
+                console.log('| $browser | $platform | ' + passed + ' | ' + failed + ' | ' + skipped + ' |');
+              " >> $GITHUB_STEP_SUMMARY
+            fi
+          done
