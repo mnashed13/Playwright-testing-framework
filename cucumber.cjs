@@ -31,4 +31,14 @@ module.exports = {
 		],
 		paths: ['src/features/*.feature', 'api-tests/features/*.feature'],
 	},
+	db: {
+		...common,
+		require: ['db-tests/steps/*.ts', 'db-tests/support/*.ts'],
+		paths: ['db-tests/features/*.feature'],
+		format: [
+			'progress-bar',
+			'html:reports/db-cucumber-report.html',
+			'json:reports/db-cucumber-report.json',
+		],
+	},
 };

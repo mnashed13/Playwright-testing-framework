@@ -13,6 +13,14 @@
 		"test:api:crud": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags '@get or @post or @put'",
 		"test:api:not-smoke": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api --tags 'not @smoke'",
 		"test:echo": "cucumber-js api-tests/features/echo-api.feature --format json:reports/cucumber-report.json --format html:reports/cucumber-report.html",
+		"test:db": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile db",
+		"test:db:smoke": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile db --tags @smoke",
+		"test:db:crud": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile db --tags @crud",
+		"test:db:validation": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile db --tags @validation",
+		"test:db:queries": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile db --tags @queries",
+		"test:db:performance": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile db --tags @performance",
+		"test:db:schema": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile db --tags @schema",
+		"db:setup": "cross-env DB_SETUP_SCHEMA=true DB_SEED_DATA=true ts-node db-tests/support/setup-db.ts",
 		"release": "semantic-release"
 	},
 	"dependencies": {
@@ -20,12 +28,14 @@
 		"@playwright/test": "^1.41.0",
 		"axios": "1.6.7",
 		"chai": "4.3.10",
-		"dotenv": "16.4.5"
+		"dotenv": "16.4.5",
+		"pg": "^8.11.3"
 	},
 	"devDependencies": {
 		"@types/chai": "4.3.11",
 		"@types/cucumber": "^7.0.0",
 		"@types/node": "18.19.17",
+		"@types/pg": "^8.10.9",
 		"buildkite-test-collector": "^1.8.1",
 		"cross-env": "^7.0.3",
 		"ts-node": "10.9.2",
