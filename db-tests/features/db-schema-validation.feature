@@ -69,3 +69,4 @@ Feature: Database Schema Validation
     And an index should exist on "user_roles(user_id)"
     And an index should exist on "login_attempts(user_id)"
 
+

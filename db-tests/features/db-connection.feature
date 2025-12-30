@@ -42,3 +42,4 @@ Feature: Database Connection Testing
     When I attempt to connect to an unreachable database host
     Then the connection should fail with a timeout error
 
+

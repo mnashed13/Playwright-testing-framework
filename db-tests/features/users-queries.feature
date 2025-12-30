@@ -114,3 +114,4 @@ Feature: Complex User Queries
       | inactive_users |
     And the numbers should be consistent with individual queries
 
+

@@ -84,3 +84,4 @@ Feature: User Data Validation
     When I update the user's first name after a 2 second delay
     Then the updated_at timestamp should be newer than the original
 
+

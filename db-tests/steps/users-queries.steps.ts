@@ -386,3 +386,4 @@ Then('the numbers should be consistent with individual queries', function (this:
 	expect(totalUsers).to.equal(activeUsers + inactiveUsers);
 });
 
+

@@ -129,3 +129,4 @@ Then('the connection should fail with a timeout error', function (this: DBWorld)
 	expect(this.lastError!.message).to.match(/timeout|timed out|ETIMEDOUT|ECONNREFUSED/i);
 });
 
+
