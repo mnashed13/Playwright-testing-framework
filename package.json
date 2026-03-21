@@ -6,6 +6,7 @@
 		"bddgen": "bddgen",
 		"test": "npm run bddgen && playwright test",
 		"test:headed": "npm run bddgen && playwright test --headed",
+		"test:ui": "npm run bddgen && playwright test --ui",
 		"pretest": "tsc",
 		"test:api": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api",
 		"test:all": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile all",

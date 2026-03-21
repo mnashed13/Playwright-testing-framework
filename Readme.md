@@ -141,6 +141,7 @@ graph TD
 ### Command Line
 
 - `npm test` - Run UI tests
+- `npm run test:ui` - Run UI tests with Playwright UI (interactive mode)
 - `npm run test:api` - Run API tests
 - `npm run test:all` - Run all tests
 - `npm run test:api:smoke` - Run API smoke tests
@@ -260,7 +261,19 @@ Playwright UI Mode provides an interactive interface for running and debugging t
    - Edit locators and see results in real-time
    - Test selector effectiveness instantly
 
-To access UI Mode, use any of the UI Mode launch configurations.
+To access UI Mode from the command line:
+
+```bash
+npm run test:ui
+```
+
+Or run directly:
+
+```bash
+npm run bddgen && npx playwright test --ui
+```
+
+You can also use any of the UI Mode launch configurations in VS Code.
 
 ### Using Playwright Debugger
 
