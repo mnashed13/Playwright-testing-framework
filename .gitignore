@@ -9,6 +9,9 @@ dist/
 
 # Test reports
 reports/
+
+# Playwright BDD generated tests
+.features-gen/
 cucumber-report.html
 cucumber-report.json
 
