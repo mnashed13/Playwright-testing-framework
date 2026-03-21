@@ -1,10 +1,12 @@
 {
 	"name": "playwright-cucumber-typescript",
 	"version": "1.0.0",
-	"description": "UI Testing with Playwright + Cucumber + TypeScript",
+	"description": "UI and API testing with Playwright BDD + Cucumber + TypeScript",
 	"scripts": {
-		"test": "cucumber-js && node dist/generate-report.js",
-		"test:headed": "cucumber-js --profile headed",
+		"bddgen": "bddgen",
+		"test": "npm run bddgen && playwright test",
+		"test:headed": "npm run bddgen && playwright test --headed",
+		"test:ui": "npm run bddgen && playwright test --ui",
 		"pretest": "tsc",
 		"test:api": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile api",
 		"test:all": "cross-env NODE_OPTIONS=--loader=ts-node/esm cucumber-js --config cucumber.cjs --profile all",
@@ -17,7 +19,7 @@
 	},
 	"dependencies": {
 		"@cucumber/cucumber": "^10.3.1",
-		"@playwright/test": "^1.41.0",
+		"@playwright/test": "^1.58.2",
 		"axios": "1.6.7",
 		"chai": "4.3.10",
 		"dotenv": "16.4.5"
@@ -28,9 +30,10 @@
 		"@types/node": "18.19.17",
 		"buildkite-test-collector": "^1.8.1",
 		"cross-env": "^7.0.3",
+		"playwright-bdd": "^8.5.0",
+		"semantic-release": "^24.2.3",
 		"ts-node": "10.9.2",
-		"typescript": "5.3.3",
-		"semantic-release": "^24.2.3"
+		"typescript": "5.3.3"
 	},
 	"release": "semantic-release"
 }
