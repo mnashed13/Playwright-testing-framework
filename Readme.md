@@ -103,6 +103,7 @@ graph TD
 
     K --> K1[users-api.steps.ts]
     K --> K2[echo-api.steps.ts]
+    K --> K3[gcp-pubsub.steps.ts]
 
     L --> L1[api-client.ts]
     L --> L2[world.ts]
@@ -111,6 +112,74 @@ graph TD
     H --> H1[world.ts]
     H --> H2[hooks.ts]
 ```
+
+## GCP Pub/Sub Testing
+
+This framework now includes GCP Pub/Sub testing capabilities using the Google Cloud Pub/Sub REST API. The tests allow you to validate Pub/Sub operations including topic management, message publishing, and subscription handling.
+
+### Prerequisites for GCP Testing
+
+1. A Google Cloud Platform account with Pub/Sub API enabled
+2. A service account with appropriate Pub/Sub permissions
+3. Environment variables configured (see `.env.example.gcp`)
+
+### Environment Configuration
+
+Copy `.env.example.gcp` to `.env` and configure the following variables:
+
+```bash
+GCP_PROJECT_ID=your-gcp-project-id
+PUBSUB_TOPIC_NAME=test-topic
+PUBSUB_SUBSCRIPTION_NAME=test-subscription
+GCP_ACCESS_TOKEN=your-gcp-access-token
+```
+
+### Running GCP Pub/Sub Tests
+
+```bash
+# Run all GCP Pub/Sub tests
+npm run test:api -- --tags @gcp
+
+# Run specific Pub/Sub scenarios
+npm run test:api -- --tags @pubsub
+
+# Run with specific feature file
+npx cucumber-js api-tests/features/gcp-pubsub-api.feature
+```
+
+### GCP Pub/Sub Test Scenarios
+
+The framework includes comprehensive BDD tests for Pub/Sub operations:
+
+1. **List Topics**: Verify you can list all Pub/Sub topics in your project
+2. **Create Topic**: Create new Pub/Sub topics with proper validation
+3. **Publish Messages**: Publish messages to topics with proper formatting
+4. **Pull Messages**: Pull messages from subscriptions for processing
+5. **Delete Topic**: Clean up topics after testing
+
+### Example Feature File
+
+```gherkin
+@api @gcp @pubsub
+Feature: GCP Pub/Sub API Testing
+
+  Scenario: Successfully publish a message to a Pub/Sub topic
+    Given I am authenticated with GCP using service account credentials
+    And I have a valid GCP project ID
+    And I have a valid topic name
+    And I have a valid message payload
+    When I send a POST request to publish a message to the topic
+    Then the response status code should be 200
+    And the response should contain message IDs
+```
+
+### Best Practices for GCP Testing
+
+1. **Use dedicated test resources**: Create separate topics/subscriptions for testing
+2. **Clean up after tests**: Delete test topics to avoid charges
+3. **Handle authentication properly**: Use service account keys or OAuth tokens
+4. **Test error scenarios**: Include tests for invalid projects, topics, and permissions
+5. **Mock when appropriate**: Consider mocking GCP APIs for unit tests
 
 ## Code Locations
 
