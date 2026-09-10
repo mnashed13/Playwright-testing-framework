@@ -357,3 +357,155 @@ See `.github/workflows/semantic-release.yml` for the full workflow definition.
 - **Traceability**: Download and review Playwright and Cucumber test reports for every release.
 
 ---
+
+## 🧪 BDD Features Overview
+
+This project implements Behavior-Driven Development (BDD) using Cucumber.js with Playwright for both UI and API testing scenarios.
+
+### BDD Testing Approach
+
+The framework follows the Gherkin syntax (`Given`, `When`, `Then`) to create executable specifications that serve as both documentation and automated tests.
+
+#### UI Testing Features
+- **Authentication flows**: Login with valid/invalid credentials
+- **Page navigation and interaction**: Element interaction, form submission
+- **Assertion mechanisms**: Visual validation, text verification, attribute checking
+- **Environment configuration**: Dynamic URL handling via environment variables
+
+#### API Testing Features
+- **REST API testing**: GET, POST, PUT requests to various endpoints
+- **Request/response validation**: Status codes, headers, body content, data integrity
+- **Dynamic data handling**: Parameterized test data, headers, payloads
+- **Request tracing**: Automatic curl command generation for debugging
+- **Environment flexibility**: Configurable base URLs and authentication
+
+### Gherkin Syntax Examples
+
+#### UI Feature Example (`src/features/login.feature`)
+```gherkin
+Feature: User Authentication
+
+  Scenario: Successful login with valid credentials
+    Given I am on the login page
+    When I login with valid credentials
+    Then I should be logged in successfully
+
+  Scenario: Failed login with invalid credentials
+    Given I am on the login page
+    When I login with invalid credentials
+    Then I should see an error message
+```
+
+#### API Feature Example (`api-tests/features/echo-api.feature`)
+```gherkin
+Feature: Echo API Testing
+
+  Scenario: GET request to echo endpoint
+    When I send a GET request to the echo endpoint
+    Then the echo response status code should be 200
+    And the response should contain the request details
+
+  Scenario: POST request with data
+    Given I have valid POST request data
+    When I send a POST request to the echo endpoint
+    Then the echo response status code should be 200
+    And the POST response should contain the sent data
+    And the response should contain the request details
+```
+
+### Step Definition Patterns
+
+#### Given - Preconditions
+- Setting up test data
+- Configuring headers and request parameters
+- Navigating to specific pages
+- Initializing test state
+
+#### When - Actions
+- Performing user interactions (clicks, inputs)
+- Sending HTTP requests (GET, POST, PUT)
+- Submitting forms
+- Triggering events
+
+#### Then - Assertions
+- Verifying HTTP status codes
+- Checking response body content
+- Validating UI element states
+- Confirming text visibility
+- Asserting data integrity
+
+### Reusable Step Definitions
+
+The framework includes several reusable step definitions:
+
+#### Common API Steps
+- `I send a {method} request to the {endpoint} endpoint`
+- `the response status code should be {int}`
+- `the response should contain {field}`
+- `the {field} should equal {value}`
+
+#### Common UI Steps
+- `I am on the {page} page`
+- `I {action} with {credentials}`
+- `I should see {element/text}`
+- `I should not see {element/text}`
+
+### Data-Driven Testing
+
+BDD scenarios can be parameterized using Scenario Outlines and Examples tables:
+
+```gherkin
+Scenario Outline: Login with different credentials
+  Given I am on the login page
+  When I login with <username> and <password>
+  Then I should see <expected outcome>
+
+  Examples:
+    | username     | password     | expected outcome      |
+    | valid_user   | valid_pass   | successful login      |
+    | invalid_user | wrong_pass   | error message         |
+    | locked_user  | any_pass     | account locked        |
+```
+
+### Best Practices Implemented
+
+1. **Descriptive Scenarios**: Each scenario tells a clear business story
+2. **Atomic Steps**: Each step performs a single, focused action
+3. **Reusable Steps**: Step definitions are designed for reuse across features
+4. **Separation of Concerns**: Features describe WHAT, steps describe HOW
+5. **Maintainable Locators**: Page Object Model used for UI element references
+6. **Environment Agnostic**: Configuration via environment variables
+7. **Automatic Documentation**: Features serve as living documentation
+8. **Traceability**: Each step maps to executable code
+
+### Running BDD Tests
+
+Execute BDD tests using the standard npm scripts:
+
+```bash
+# Run UI tests
+npm test
+
+# Run API tests
+npm run test:api
+
+# Run all tests
+npm run test:all
+
+# Run specific API test suites
+npm run test:api:smoke
+npm run test:api:regression
+npm run test:api:crud
+```
+
+### Reporting and Debugging
+
+BDD test execution generates comprehensive reports:
+
+1. **HTML Reports**: Visual test results with screenshots
+2. **JSON Reports**: Machine-readable results for CI/CD integration
+3. **Curl Tracing**: Automatic curl command generation for API debugging
+4. **Playwright Traces**: Detailed execution traces for debugging
+5. **Custom Reports**: Tailored reports for stakeholder consumption
+
+The BDD approach ensures that tests are readable by both technical and non-technical stakeholders while maintaining full automation capabilities.
